@@ -429,45 +429,22 @@
             margin-bottom: 15px;
         }
         
-     .back-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 22px;  /* thoda bada padding */
-    background: var(--light-gray) !important;
-    color: var(--dark-blue) !important;
-    border-radius: 12px;
-    text-decoration: none !important;
-    font-weight: 600;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
-    cursor: pointer; /* ensure pointer on mobile too */
-    position: relative; /* for z-index safety */
-    overflow: hidden;
-}
-
-/* hover + tap effect for PC + Mobile */
-.back-btn:hover,
-.back-btn:focus,
-.back-btn:active {
-    background: #e2e8f0 !important;
-    transform: scale(1.05);   /* slight zoom on hover/tap */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-/* icon spacing */
-.back-btn i {
-    margin-right: 8px;
-    font-size: 18px;
-}
-
-/* Optional: mobile touch feedback */
-@media (hover: none) and (pointer: coarse) {
-    .back-btn:active {
-        background: #e2e8f0 !important;
-        transform: scale(1.05);
-    }
-}
-
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background: var(--light-gray);
+            color: var(--dark-blue);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: #e2e8f0;
+        }
         
         .video-container {
             position: relative;

@@ -315,112 +315,79 @@
             margin: 10px auto;
             border-radius: 2px;
         }
+:root {
+    --gradient-primary: linear-gradient(135deg, #ff512f, #dd2476); /* Orange → Pink */
+    --gradient-secondary: linear-gradient(135deg, #36d1dc, #5b86e5); /* Cyan → Blue */
+}
 
-        :root {
-            --gradient-primary: linear-gradient(135deg, #ff512f, #dd2476);
-            /* Orange → Pink */
-            --gradient-secondary: linear-gradient(135deg, #36d1dc, #5b86e5);
-            /* Cyan → Blue */
-        }
+/* container */
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 50px auto;
+}
 
-        /* container */
-        .btn-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 600px;
-            margin: 50px auto;
-        }
+/* buttons */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 50px;   /* big size */
+    border-radius: 50px;  /* round pill */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.7px;
+    color: #fff;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
 
-        /* buttons */
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px 50px;
-            /* big size */
-            border-radius: 50px;
-            /* round pill */
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 20px;
-            letter-spacing: 0.7px;
-            color: #fff;
-            transition: all 0.4s ease-in-out;
-            position: relative;
-            overflow: hidden;
-        }
+/* shine effect */
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0)
+    );
+    transform: skewX(-25deg);
+}
 
-        /* shine effect */
-        .btn::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 80%;
-            height: 100%;
-            background: linear-gradient(120deg,
-                    rgba(255, 255, 255, 0.4),
-                    rgba(255, 255, 255, 0));
-            transform: skewX(-25deg);
-        }
+/* hover animation */
+.btn:hover::before {
+    left: 130%;
+    transition: left 0.8s ease;
+}
+.btn:hover {
+    transform: scale(1.08); /* thoda bada */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25),
+                0 0 20px rgba(255,255,255,0.4) inset;
+}
 
-        /* hover animation */
-        .btn:hover::before {
-            left: 130%;
-            transition: left 0.8s ease;
-        }
+/* primary */
+.btn-primary {
+    background: var(--gradient-primary);
+}
 
-        .btn:hover {
-            transform: scale(1.08);
-            /* thoda bada */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25),
-                0 0 20px rgba(255, 255, 255, 0.4) inset;
-        }
+/* secondary */
+.btn-secondary {
+    background: var(--gradient-secondary);
+}
 
-        /* primary */
-        .btn-primary {
-            background: var(--gradient-primary);
-        }
-
-        /* secondary */
-        .btn-secondary {
-            background: var(--gradient-secondary);
-        }
-
-        /* icons */
-        .btn i {
-            margin-right: 14px;
-            font-size: 26px;
-        }
-
-        @keyframes gradientMove {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .btn-primary {
-            background: linear-gradient(270deg, #ff512f, #dd2476, #ff512f);
-            background-size: 200% 200%;
-            animation: gradientMove 5s infinite alternate;
-            color: #fff;
-        }
-
-        .btn-secondary {
-            background: linear-gradient(270deg, #36d1dc, #5b86e5, #36d1dc);
-            background-size: 200% 200%;
-            animation: gradientMove 5s infinite alternate;
-            color: #fff;
-        }
+/* icons */
+.btn i {
+    margin-right: 14px;
+    font-size: 26px;
+}
 
 
         .features-grid {
