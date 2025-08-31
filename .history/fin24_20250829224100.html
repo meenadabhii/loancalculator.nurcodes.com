@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureBank - Adult Banking Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1a4f8c;
+            --secondary-blue: #2c6cb0;
+            --accent-gold: #d4af37;
+            --dark-blue: #1e293b;
+            --light-gray: #f8fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f1f5f9;
+            color: #334155;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 25px 0;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        
+        .action-btn {
+            display: block;
+            padding: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            margin: 20px 0;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+        }
+        
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            margin: 10px;
+            flex: 1;
+            min-width: 130px;
+        }
+        
+        .footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+        }
+        
+        .ad-container {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .ad-label {
+            color: #64748b;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        
+        .account-card {
+            background: linear-gradient(to right, #f8fafc, #e2e8f0);
+            border-left: 4px solid var(--accent-gold);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+        
+        .offer-tag {
+            background: var(--accent-gold);
+            color: white;
+            font-size: 14px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        @media (min-width: 768px) {
+            .content-section {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            
+            .card {
+                flex-basis: calc(50% - 10px);
+            }
+            
+            .stats-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .account-cards {
+                display: flex;
+                gap: 15px;
+            }
+            
+            .account-card {
+                flex: 1;
+            }
+        }
+        
+        .text-white {
+            color: white;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        
+        .btn-outline:hover {
+            background: var(--accent-gold);
+            color: white;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-gold);
+            border-radius: 4px;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://googleads.g.doubleclick.net">
+    <link rel="preconnect" href="https://tpc.googlesyndication.com">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9383584644305078"
+        crossorigin="anonymous"></script>
+
+
+
+        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+
+
+    <script>
+        (function () {
+            // Initialize googletag if not already defined
+            window.googletag = window.googletag || { cmd: [] };
+
+            // Ad slot variables
+            let adSlot1, adSlot2, anchorSlot;
+            const refreshInterval = 30000; // 30 seconds - more user-friendly refresh rate
+            let refreshTimer;
+
+            // Function to set up ads
+            function setupAds() {
+                googletag.cmd.push(function () {
+                    // Setup PubAds
+                    const pubads = googletag.pubads();
+                    pubads.enableSingleRequest();
+                    pubads.setCentering(true);
+
+                    // Apply geotargeting if available
+                    if (window.geoTarget) {
+                        pubads.setLocation(window.geoTarget);
+                    }
+
+                    // Define Ad Slots with consistent IDs
+                    adSlot1 = googletag.defineSlot(
+                        '/23315732502/native',
+                        [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                        'ad-slot-1'
+                    ).addService(pubads);
+
+                    adSlot2 = googletag.defineSlot(
+                        '/23315732502/native',
+                        [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                        'ad-slot-2'
+                    ).addService(pubads);
+
+                    // Define anchor ad with proper ID
+                    anchorSlot = googletag.defineOutOfPageSlot(
+                        '/23315732502/anchor',
+                        googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+                    );
+
+                    if (anchorSlot) {
+                        anchorSlot.addService(pubads);
+                        // Use the correct ID for the anchor ad
+                        anchorSlot.setElementId('ad-anchor-slot');
+                    }
+
+                    // Event listeners for ad loading
+                    pubads.addEventListener('slotRenderEnded', function (event) {
+                        // Handle ad render events if needed
+                        const slotId = event.slot.getSlotElementId();
+                        const isEmpty = event.isEmpty;
+
+                        // Example: hide containers with no ads
+                        if (isEmpty && document.getElementById(slotId)) {
+                            document.getElementById(slotId).style.display = 'none';
+                        }
+                    });
+
+                    // Enable services
+                    googletag.enableServices();
+
+                    // Display ads
+                    try {
+                        if (document.getElementById('ad-slot-1')) {
+                            googletag.display('ad-slot-1');
+                        }
+                        if (document.getElementById('ad-slot-2')) {
+                            googletag.display('ad-slot-2');
+                        }
+                        if (document.getElementById('ad-anchor-slot')) {
+                            googletag.display('ad-anchor-slot');
+                        }
+                    } catch (error) {
+                        console.log('Error displaying ads:', error);
+                    }
+
+                    // Set up periodic refresh with error handling
+                    setupAdRefresh();
+                });
+            }
+
+            // Function to handle ad refresh
+            function setupAdRefresh() {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                }
+
+                refreshTimer = setInterval(function () {
+                    try {
+                        // Only refresh if slots exist and are defined
+                        const slotsToRefresh = [];
+                        if (adSlot1) slotsToRefresh.push(adSlot1);
+                        if (adSlot2) slotsToRefresh.push(adSlot2);
+
+                        if (slotsToRefresh.length > 0) {
+                            googletag.cmd.push(function () {
+                                googletag.pubads().refresh(slotsToRefresh);
+                            });
+                        }
+                    } catch (error) {
+                        console.log('Error refreshing ads:', error);
+                        clearInterval(refreshTimer); // Stop trying on persistent errors
+                    }
+                }, refreshInterval);
+            }
+
+            // Check for ad blockers (simple detection)
+            function checkAdBlocker() {
+                const testAd = document.createElement('div');
+                testAd.innerHTML = '&nbsp;';
+                testAd.className = 'adsbox';
+                document.body.appendChild(testAd);
+
+                setTimeout(function () {
+                    if (testAd.offsetHeight === 0) {
+                        console.log('Ad blocker detected');
+                        // You can show a message to users or implement fallback content
+                    }
+                    document.body.removeChild(testAd);
+                }, 100);
+            }
+
+            // Initialize ads when DOM is ready
+            if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                setupAds();
+                checkAdBlocker();
+            } else {
+                document.addEventListener('DOMContentLoaded', function () {
+                    setupAds();
+                    checkAdBlocker();
+                });
+            }
+
+            // Clean up on page unload
+            window.addEventListener('beforeunload', function () {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                }
+            });
+        })();
+
+    </script>
+
+
+    <style>
+        #banner-ad {
+            width: 100%;
+            max-width: 425px;
+            margin: 1rem auto 0.5rem;
+            padding: 0.5rem;
+            background: hsl(240, 6%, 97%);
+            box-shadow: 0 4px 15px var(--shadow-dark);
+            border-radius: 8px;
+            position: relative;
+            text-align: center;
+            border: 1px solid var(--accent-gold);
+        }
+
+        #banner-ad::before {
+            content: "Advertisement";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--accent-gold);
+            background: var(--primary-dark);
+            padding: 0 8px;
+            border-radius: 4px;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .ad-divider {
+            width: 90%;
+            max-width: 425px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            margin: 0.5rem auto;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <div style="width: 50px; height: 50px; border-radius: 12px; background: var(--primary-blue); display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                    <i class="fas fa-university text-white" style="font-size: 24px;"></i>
+                </div>
+                <h1 style="font-size: 24px; font-weight: 700; color: var(--primary-blue);">SecureBank</h1>
+            </div>
+            <p style="color: var(--dark-blue); font-size: 16px;">Premium Banking for Adults</p>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="content-section" style="text-align: center;">
+            <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 15px; color: var(--dark-blue);">Welcome to Your <span style="color: var(--primary-blue);">Premium Banking</span> Experience</h2>
+            <p style="color: #64748b; margin-bottom: 25px; font-size: 16px;">Access exclusive financial products and services designed for your success.</p>
+
+            <div style="background: var(--light-gray); padding: 25px; border-radius: 16px; margin: 20px 0;">
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 20px; color: var(--dark-blue);">Manage Your Financial Portfolio</h3>
+                <p style="color: #64748b; margin-bottom: 25px; font-size: 15px;">Choose from our premium banking services tailored for adults</p>
+
+                <a href="fund.html" class="action-btn"
+                    style="background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue)); color: white;">
+                    <i class="fas fa-chart-line" style="margin-right: 10px; font-size: 24px;"></i>
+                    Investment Funds
+                </a>
+
+                <a href="finance.html" class="action-btn"
+                    style="background: linear-gradient(to right, var(--accent-gold), #e6c65c); color: white;">
+                    <i class="fas fa-hand-holding-usd" style="margin-right: 10px; font-size: 24px;"></i>
+                    Personal Financing
+                </a>
+            </div>
+        </div>
+
+        <!-- Account Overview -->
+        <div class="content-section">
+            <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px; color: var(--dark-blue);">
+                Your Accounts Overview</h2>
+                
+            <div class="account-cards">
+                <div class="account-card">
+                    <span class="offer-tag">Premium Checking</span>
+                    <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 10px;">Smart Checking Account</h3>
+                    <p style="color: #64748b; margin-bottom: 15px;">Balance: <strong style="color: var(--dark-blue);">$12,458.32</strong></p>
+                    <p style="color: #64748b; font-size: 14px;">Account #: **** 4582</p>
+                </div>
+                
+                <div class="account-card">
+                    <span class="offer-tag">Savings Plus</span>
+                    <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 10px;">High-Yield Savings</h3>
+                    <p style="color: #64748b; margin-bottom: 15px;">Balance: <strong style="color: var(--dark-blue);">$28,741.16</strong></p>
+                    <p style="color: #64748b; font-size: 14px;">2.15% APY · FDIC Insured</p>
+                </div>
+            </div>
+            
+            <div style="background: #f8fafc; padding: 20px; border-radius: 12px; margin-top: 20px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span style="font-weight: 600;">Monthly Savings Goal</span>
+                    <span>$1,200 / $2,000</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 60%;"></div>
+                </div>
+                <p style="color: #64748b; font-size: 14px; text-align: center; margin-top: 10px;">You're 60% toward your monthly goal</p>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="content-section">
+            <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px; color: var(--dark-blue);">
+                Exclusive Benefits for You</h2>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--primary-blue);">
+                <div class="icon-circle" style="background: #dbeafe;">
+                    <i class="fas fa-percentage" style="color: var(--primary-blue);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Lower Loan Rates</h3>
+                <p style="color: #64748b; text-align: center;">Enjoy preferential rates on mortgages, auto loans, and personal lines of credit.</p>
+            </div>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--accent-gold);">
+                <div class="icon-circle" style="background: #fef3c7;">
+                    <i class="fas fa-credit-card" style="color: var(--accent-gold);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Premium Credit Cards</h3>
+                <p style="color: #64748b; text-align: center;">Access cards with enhanced rewards, higher limits, and exclusive travel benefits.</p>
+            </div>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--primary-blue);">
+                <div class="icon-circle" style="background: #dbeafe;">
+                    <i class="fas fa-user-shield" style="color: var(--primary-blue);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Priority Support</h3>
+                <p style="color: #64748b; text-align: center;">24/7 dedicated customer service with no wait times for premium members.</p>
+            </div>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--accent-gold);">
+                <div class="icon-circle" style="background: #fef3c7;">
+                    <i class="fas fa-plane" style="color: var(--accent-gold);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Travel Benefits</h3>
+                <p style="color: #64748b; text-align: center;">Complimentary airport lounge access and travel insurance with premium accounts.</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <!-- Multiplex Ad -->
+            <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                data-ad-client="ca-pub-9383584644305078" data-ad-slot="2320363731"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="content-section"
+            style="background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue)); color: white;">
+            <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px;">Your Financial Growth</h2>
+
+            <div class="stats-container">
+                <div class="stat-box">
+                    <p style="font-size: 32px; font-weight: 700;">4.2%</p>
+                    <p style="font-size: 16px;">Portfolio Growth</p>
+                </div>
+
+                <div class="stat-box">
+                    <p style="font-size: 32px; font-weight: 700;">$1,240</p>
+                    <p style="font-size: 16px;">Monthly Savings</p>
+                </div>
+
+                <div class="stat-box">
+                    <p style="font-size: 32px; font-weight: 700;">12%</p>
+                    <p style="font-size: 16px;">ROI This Year</p>
+                </div>
+
+                <div class="stat-box">
+                    <p style="font-size: 32px; font-weight: 700;">$41.2K</p>
+                    <p style="font-size: 16px;">Net Worth Increase</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Special Offers -->
+        <div class="content-section">
+            <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px; color: var(--dark-blue);">
+                Special Offers For You</h2>
+                
+            <div style="background: linear-gradient(to right, #1a4f8c, #2c6cb0); color: white; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+                <span class="offer-tag" style="background: white; color: var(--primary-blue);">Limited Time</span>
+                <h3 style="font-size: 20px; font-weight: 600; margin: 10px 0;">Home Equity Line of Credit</h3>
+                <p style="margin-bottom: 15px;">Get a HELOC with introductory 3.99% APR for the first 12 months</p>
+                <a href="#" style="color: white; text-decoration: underline; font-weight: 600;">Learn More</a>
+            </div>
+            
+            <div style="background: linear-gradient(to right, #d4af37, #e6c65c); color: white; padding: 20px; border-radius: 12px;">
+                <span class="offer-tag" style="background: white; color: var(--accent-gold);">Exclusive</span>
+                <h3 style="font-size: 20px; font-weight: 600; margin: 10px 0;">Wealth Management Consultation</h3>
+                <p style="margin-bottom: 15px;">Complimentary session with our senior financial advisors</p>
+                <a href="#" style="color: white; text-decoration: underline; font-weight: 600;">Schedule Now</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--accent-gold);">SecureBank</h3>
+            <p style="color: #cbd5e1; margin-bottom: 25px; font-size: 15px;">Member FDIC. Equal Housing Lender.</p>
+
+            <div style="margin-bottom: 25px;">
+                <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: white;">Contact Us</h4>
+                <p style="color: #cbd5e1; margin-bottom: 8px; font-size: 14px;"><i class="fas fa-map-marker-alt"
+                        style="margin-right: 10px; color: var(--accent-gold);"></i> 123 Banking Avenue, Financial District</p>
+                <p style="color: #cbd5e1; margin-bottom: 8px; font-size: 14px;"><i class="fas fa-phone"
+                        style="margin-right: 10px; color: var(--accent-gold);"></i> (800) 123-BANK</p>
+                <p style="color: #cbd5e1; font-size: 14px;"><i class="fas fa-envelope"
+                        style="margin-right: 10px; color: var(--accent-gold);"></i> support@securebank.com</p>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 14px;">Privacy Policy</a>
+                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 14px;">Terms of Service</a>
+                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 14px;">Security Center</a>
+            </div>
+
+            <p style="color: #94a3b8; font-size: 14px; border-top: 1px solid #334155; padding-top: 20px;">&copy; 2023 SecureBank Financial Services. All rights reserved.</p>
+        </div>
+    </div>
+
+
+
+
+    
+</body>
+
+</html

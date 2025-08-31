@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureBank - Financial Education for Youth</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1a4f8c;
+            --secondary-blue: #2c6cb0;
+            --accent-teal: #0ea5e9;
+            --accent-green: #10b981;
+            --dark-blue: #1e293b;
+            --light-gray: #f8fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f1f5f9;
+            color: #334155;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 25px 0;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        
+        .action-btn {
+            display: block;
+            padding: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            margin: 20px 0;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+        }
+        
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            margin: 10px;
+            flex: 1;
+            min-width: 130px;
+        }
+        
+        .footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+        }
+        
+        .ad-container {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .ad-label {
+            color: #64748b;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        
+        .info-card {
+            background: linear-gradient(to right, #f8fafc, #e2e8f0);
+            border-left: 4px solid var(--accent-teal);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+        
+        .offer-tag {
+            background: var(--accent-teal);
+            color: white;
+            font-size: 14px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .tab-container {
+            display: flex;
+            border-bottom: 1px solid #cbd5e1;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #64748b;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+        }
+        
+        .tab.active {
+            color: var(--primary-blue);
+            border-bottom: 3px solid var(--primary-blue);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .calculator {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+        
+        .slider-container {
+            margin-top: 10px;
+        }
+        
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #cbd5e1;
+            outline: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            cursor: pointer;
+        }
+        
+        .result-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .result-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .finance-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .finance-table th, .finance-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .finance-table th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+        
+        .finance-table tr:hover {
+            background-color: #f8fafc;
+        }
+        
+        .trend-up {
+            color: #10b981;
+        }
+        
+        .trend-down {
+            color: #ef4444;
+        }
+        
+        .quiz-container {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        
+        .quiz-question {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark-blue);
+        }
+        
+        .quiz-option {
+            display: block;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: white;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .quiz-option:hover {
+            background: #e0f2fe;
+        }
+        
+        .quiz-option.selected {
+            background: #dbeafe;
+            border-color: var(--primary-blue);
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-teal);
+            border-radius: 4px;
+        }
+        
+        @media (min-width: 768px) {
+            .content-section {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            
+            .card {
+                flex-basis: calc(50% - 10px);
+            }
+            
+            .stats-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .info-cards {
+                display: flex;
+                gap: 15px;
+            }
+            
+            .info-card {
+                flex: 1;
+            }
+            
+            .calculator-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 20px 0;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .action-btn {
+                padding: 15px;
+                font-size: 16px;
+            }
+            
+            .tab-container {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+        
+        .text-white {
+            color: white;
+        }
+        
+        .gamification-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            background: var(--accent-green);
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .animation-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .coin-animation {
+            font-size: 48px;
+            color: var(--accent-teal);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted var(--primary-blue);
+            cursor: help;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: var(--dark-blue);
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-weight: normal;
+            font-size: 14px;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://googleads.g.doubleclick.net">
+    <link rel="preconnect" href="https://tpc.googlesyndication.com">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9383584644305078"
+        crossorigin="anonymous"></script>
+
+
+
+        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+
+
+    <script>
+        (function () {
+            // Initialize googletag if not already defined
+            window.googletag = window.googletag || { cmd: [] };
+
+            // Ad slot variables
+            let adSlot1, adSlot2, anchorSlot;
+            const refreshInterval = 30000; // 30 seconds - more user-friendly refresh rate
+            let refreshTimer;
+
+            // Function to set up ads
+            function setupAds() {
+                googletag.cmd.push(function () {
+                    // Setup PubAds
+                    const pubads = googletag.pubads();
+                    pubads.enableSingleRequest();
+                    pubads.setCentering(true);
+
+                    // Apply geotargeting if available
+                    if (window.geoTarget) {
+                        pubads.setLocation(window.geoTarget);
+                    }
+
+                    // Define Ad Slots with consistent IDs
+                    adSlot1 = googletag.defineSlot(
+                        '/23315732502/native',
+                        [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                        'ad-slot-1'
+                    ).addService(pubads);
+
+                    adSlot2 = googletag.defineSlot(
+                        '/23315732502/native',
+                        [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                        'ad-slot-2'
+                    ).addService(pubads);
+
+                    // Define anchor ad with proper ID
+                    anchorSlot = googletag.defineOutOfPageSlot(
+                        '/23315732502/anchor',
+                        googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+                    );
+
+                    if (anchorSlot) {
+                        anchorSlot.addService(pubads);
+                        // Use the correct ID for the anchor ad
+                        anchorSlot.setElementId('ad-anchor-slot');
+                    }
+
+                    // Event listeners for ad loading
+                    pubads.addEventListener('slotRenderEnded', function (event) {
+                        // Handle ad render events if needed
+                        const slotId = event.slot.getSlotElementId();
+                        const isEmpty = event.isEmpty;
+
+                        // Example: hide containers with no ads
+                        if (isEmpty && document.getElementById(slotId)) {
+                            document.getElementById(slotId).style.display = 'none';
+                        }
+                    });
+
+                    // Enable services
+                    googletag.enableServices();
+
+                    // Display ads
+                    try {
+                        if (document.getElementById('ad-slot-1')) {
+                            googletag.display('ad-slot-1');
+                        }
+                        if (document.getElementById('ad-slot-2')) {
+                            googletag.display('ad-slot-2');
+                        }
+                        if (document.getElementById('ad-anchor-slot')) {
+                            googletag.display('ad-anchor-slot');
+                        }
+                    } catch (error) {
+                        console.log('Error displaying ads:', error);
+                    }
+
+                    // Set up periodic refresh with error handling
+                    setupAdRefresh();
+                });
+            }
+
+            // Function to handle ad refresh
+            function setupAdRefresh() {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                }
+
+                refreshTimer = setInterval(function () {
+                    try {
+                        // Only refresh if slots exist and are defined
+                        const slotsToRefresh = [];
+                        if (adSlot1) slotsToRefresh.push(adSlot1);
+                        if (adSlot2) slotsToRefresh.push(adSlot2);
+
+                        if (slotsToRefresh.length > 0) {
+                            googletag.cmd.push(function () {
+                                googletag.pubads().refresh(slotsToRefresh);
+                            });
+                        }
+                    } catch (error) {
+                        console.log('Error refreshing ads:', error);
+                        clearInterval(refreshTimer); // Stop trying on persistent errors
+                    }
+                }, refreshInterval);
+            }
+
+            // Check for ad blockers (simple detection)
+            function checkAdBlocker() {
+                const testAd = document.createElement('div');
+                testAd.innerHTML = '&nbsp;';
+                testAd.className = 'adsbox';
+                document.body.appendChild(testAd);
+
+                setTimeout(function () {
+                    if (testAd.offsetHeight === 0) {
+                        console.log('Ad blocker detected');
+                        // You can show a message to users or implement fallback content
+                    }
+                    document.body.removeChild(testAd);
+                }, 100);
+            }
+
+            // Initialize ads when DOM is ready
+            if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                setupAds();
+                checkAdBlocker();
+            } else {
+                document.addEventListener('DOMContentLoaded', function () {
+                    setupAds();
+                    checkAdBlocker();
+                });
+            }
+
+            // Clean up on page unload
+            window.addEventListener('beforeunload', function () {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                }
+            });
+        })();
+
+    </script>
+
+
+    <style>
+        #banner-ad {
+            width: 100%;
+            max-width: 425px;
+            margin: 1rem auto 0.5rem;
+            padding: 0.5rem;
+            background: hsl(240, 6%, 97%);
+            box-shadow: 0 4px 15px var(--shadow-dark);
+            border-radius: 8px;
+            position: relative;
+            text-align: center;
+            border: 1px solid var(--accent-gold);
+        }
+
+        #banner-ad::before {
+            content: "Advertisement";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--accent-gold);
+            background: var(--primary-dark);
+            padding: 0 8px;
+            border-radius: 4px;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .ad-divider {
+            width: 90%;
+            max-width: 425px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            margin: 0.5rem auto;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <div style="width: 50px; height: 50px; border-radius: 12px; background: var(--primary-blue); display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                    <i class="fas fa-piggy-bank text-white" style="font-size: 24px;"></i>
+                </div>
+                <h1 style="font-size: 24px; font-weight: 700; color: var(--primary-blue);">SecureBank Junior</h1>
+            </div>
+            <p style="color: var(--dark-blue); font-size: 16px;">Financial Education for Young Minds</p>
+        </div>
+
+        <!-- ads unit  -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <!-- Display Ad -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9383584644305078"
+                data-ad-slot="2267542786" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="content-section" style="text-align: center;">
+            <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 15px; color: var(--dark-blue);">Start Your <span style="color: var(--primary-blue);">Financial Journey</span> Today!</h2>
+            <p style="color: #64748b; margin-bottom: 25px; font-size: 16px;">Learn about money, savings, and smart spending in a fun and engaging way.</p>
+
+            <div class="animation-container">
+                <div class="coin-animation">
+                    <i class="fas fa-coins"></i>
+                </div>
+            </div>
+
+            <div style="background: var(--light-gray); padding: 25px; border-radius: 16px; margin: 20px 0;">
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 20px; color: var(--dark-blue);">Learning Paths</h3>
+                <p style="color: #64748b; margin-bottom: 25px; font-size: 15px;">Choose your adventure to financial knowledge</p>
+
+                <button class="action-btn"
+                    style="background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue)); color: white;">
+                    <i class="fas fa-graduation-cap" style="margin-right: 10px; font-size: 24px;"></i>
+                    Start Learning
+                </button>
+
+                <button class="action-btn"
+                    style="background: linear-gradient(to right, var(--accent-teal), #38bdf8); color: white;">
+                    <i class="fas fa-gamepad" style="margin-right: 10px; font-size: 24px;"></i>
+                    Play Finance Games
+                </button>
+            </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="content-section">
+            <div class="tab-container">
+                <div class="tab active" onclick="switchTab('savings')">Savings Calculator</div>
+                <div class="tab" onclick="switchTab('budget')">Budget Planner</div>
+                <div class="tab" onclick="switchTab('quiz')">Finance Quiz</div>
+                <div class="tab" onclick="switchTab('goals')">Goal Setting</div>
+            </div>
+            
+            <!-- Savings Calculator Tab -->
+            <div id="savings-tab" class="tab-content active">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--dark-blue);">Savings Calculator</h2>
+                <p style="color: #64748b; margin-bottom: 25px;">See how your savings can grow over time with regular contributions.</p>
+                
+                <div class="calculator">
+                    <div class="form-group">
+                        <label for="savings-goal">What are you saving for? <span class="tooltip">ℹ️<span class="tooltiptext">Enter a goal like "new bike" or "college fund"</span></span></label>
+                        <input type="text" id="savings-goal" placeholder="New bike, game console, etc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="goal-amount">How much does it cost? ($)</label>
+                        <input type="number" id="goal-amount" value="200" min="1" step="5">
+                        <div class="slider-container">
+                            <input type="range" min="1" max="1000" value="200" class="slider" id="goal-slider">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="weekly-savings">How much can you save each week? ($)</label>
+                        <input type="number" id="weekly-savings" value="10" min="1" step="1">
+                        <div class="slider-container">
+                            <input type="range" min="1" max="50" value="10" class="slider" id="savings-slider">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="current-savings">How much have you saved already? ($)</label>
+                        <input type="number" id="current-savings" value="25" min="0" step="5">
+                    </div>
+                    
+                    <button onclick="calculateSavings()" class="action-btn" style="background: var(--accent-green); color: white; border: none;">
+                        Calculate My Savings Plan
+                    </button>
+                    
+                    <div class="result-box">
+                        <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">Your Savings Plan</h3>
+                        <div class="result-value" id="savings-result">$200 in 18 weeks</div>
+                        <p style="color: #64748b; margin-top: 10px;">Weekly savings: <span id="weekly-amount">$10</span></p>
+                        <p style="color: #64748b;">You'll reach your goal on: <span id="goal-date">December 15, 2023</span></p>
+                        
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="savings-progress" style="width: 12.5%;"></div>
+                        </div>
+                        <p style="color: #64748b; font-size: 14px; text-align: center;">12.5% of your goal achieved</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Budget Planner Tab -->
+            <div id="budget-tab" class="tab-content">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--dark-blue);">Budget Planner</h2>
+                <p style="color: #64748b; margin-bottom: 25px;">Plan how to use your allowance or earnings wisely.</p>
+                
+                <div class="calculator">
+                    <div class="form-group">
+                        <label for="income-source">Where does your money come from? <span class="tooltip">ℹ️<span class="tooltiptext">Allowance, gifts, chores, etc.</span></span></label>
+                        <input type="text" id="income-source" placeholder="Allowance, gifts, etc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="weekly-income">How much money do you get each week? ($)</label>
+                        <input type="number" id="weekly-income" value="20" min="0" step="5">
+                    </div>
+                    
+                    <h3 style="font-size: 18px; margin: 20px 0 15px; color: var(--dark-blue);">How do you want to use your money?</h3>
+                    
+                    <div class="form-group">
+                        <label for="savings-percent">How much do you want to save? (%)</label>
+                        <input type="number" id="savings-percent" value="30" min="0" max="100">
+                        <div class="slider-container">
+                            <input type="range" min="0" max="100" value="30" class="slider" id="savings-percent-slider">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="spending-percent">How much do you want to spend? (%)</label>
+                        <input type="number" id="spending-percent" value="50" min="0" max="100">
+                        <div class="slider-container">
+                            <input type="range" min="0" max="100" value="50" class="slider" id="spending-percent-slider">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sharing-percent">How much do you want to share/donate? (%)</label>
+                        <input type="number" id="sharing-percent" value="20" min="0" max="100">
+                        <div class="slider-container">
+                            <input type="range" min="0" max="100" value="20" class="slider" id="sharing-percent-slider">
+                        </div>
+                    </div>
+                    
+                    <button onclick="calculateBudget()" class="action-btn" style="background: var(--primary-blue); color: white; border: none;">
+                        Create My Budget Plan
+                    </button>
+                    
+                    <div class="result-box">
+                        <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 15px;">Your Weekly Budget</h3>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span style="font-weight: 600;">Savings</span>
+                            <span>$6.00 (30%)</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 30%; background: var(--accent-green);"></div>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px; margin-top: 15px;">
+                            <span style="font-weight: 600;">Spending</span>
+                            <span>$10.00 (50%)</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 50%; background: var(--accent-teal);"></div>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px; margin-top: 15px;">
+                            <span style="font-weight: 600;">Sharing</span>
+                            <span>$4.00 (20%)</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 20%; background: var(--primary-blue);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Finance Quiz Tab -->
+            <div id="quiz-tab" class="tab-content">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--dark-blue);">Financial Literacy Quiz</h2>
+                <p style="color: #64748b; margin-bottom: 25px;">Test your knowledge and earn badges as you learn!</p>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question" id="quiz-question">1. What is the best reason to save money?</div>
+                    
+                    <label class="quiz-option">
+                        <input type="radio" name="quiz-answer" value="A"> To have money for future needs and wants
+                    </label>
+                    
+                    <label class="quiz-option">
+                        <input type="radio" name="quiz-answer" value="B"> To keep it hidden under your mattress
+                    </label>
+                    
+                    <label class="quiz-option">
+                        <input type="radio" name="quiz-answer" value="C"> To spend it all immediately
+                    </label>
+                    
+                    <label class="quiz-option">
+                        <input type="radio" name="quiz-answer" value="D"> To show off to your friends
+                    </label>
+                    
+                    <button onclick="checkAnswer()" class="action-btn" style="background: var(--accent-teal); color: white; border: none; margin-top: 15px;">
+                        Check Answer
+                    </button>
+                    
+                    <div id="quiz-feedback" style="margin-top: 20px; padding: 15px; border-radius: 8px; display: none;"></div>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <h3 style="font-size: 18px; margin-bottom: 15px; color: var(--dark-blue);">Your Badges</h3>
+                    <div class="gamification-badge" style="background: var(--accent-green);">
+                        <i class="fas fa-award"></i> Savings Star
+                    </div>
+                    <div class="gamification-badge" style="background: var(--primary-blue);">
+                        <i class="fas fa-trophy"></i> Budget Master
+                    </div>
+                    <div class="gamification-badge" style="background: #8b5cf6;">
+                        <i class="fas fa-lightbulb"></i> Financial Whiz
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Goal Setting Tab -->
+            <div id="goals-tab" class="tab-content">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--dark-blue);">Set Your Financial Goals</h2>
+                <p style="color: #64748b; margin-bottom: 25px;">What do you want to achieve with your money?</p>
+                
+                <div class="info-card">
+                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">Create a New Goal</h3>
+                    
+                    <div class="form-group">
+                        <label for="goal-name">Goal Name</label>
+                        <input type="text" id="goal-name" placeholder="New video game, bicycle, etc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="goal-cost">How much will it cost? ($)</label>
+                        <input type="number" id="goal-cost" placeholder="50.00">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="goal-deadline">When do you want to reach this goal?</label>
+                        <input type="date" id="goal-deadline">
+                    </div>
+                    
+                    <button onclick="addGoal()" class="action-btn" style="background: var(--accent-green); color: white; border: none;">
+                        Add Goal
+                    </button>
+                </div>
+                
+                <h3 style="font-size: 18px; margin: 25px 0 15px; color: var(--dark-blue);">Your Current Goals</h3>
+                
+                <div class="info-card">
+                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px; color: var(--primary-blue);">New Video Game</h3>
+                    <p style="color: #64748b;">Target: $60 by November 30, 2023</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%;"></div>
+                    </div>
+                    <p style="color: #64748b; font-size: 14px; text-align: center;">$27 saved of $60 (45%)</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px; color: var(--primary-blue);">Bicycle</h3>
+                    <p style="color: #64748b;">Target: $200 by March 1, 2024</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 15%;"></div>
+                    </div>
+                    <p style="color: #64748b; font-size: 14px; text-align: center;">$30 saved of $200 (15%)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="content-section">
+            <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px; color: var(--dark-blue);">
+                Learn Important Money Skills</h2>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--primary-blue);">
+                <div class="icon-circle" style="background: #dbeafe;">
+                    <i class="fas fa-piggy-bank" style="color: var(--primary-blue);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Saving Money</h3>
+                <p style="color: #64748b; text-align: center;">Learn why saving is important and how to make it a habit that will help you throughout life.</p>
+            </div>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--accent-teal);">
+                <div class="icon-circle" style="background: #e0f2fe;">
+                    <i class="fas fa-money-bill-wave" style="color: var(--accent-teal);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Budgeting</h3>
+                <p style="color: #64748b; text-align: center;">Discover how to create a simple budget to manage your allowance or earnings wisely.</p>
+            </div>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--accent-green);">
+                <div class="icon-circle" style="background: #dcfce7;">
+                    <i class="fas fa-hand-holding-usd" style="color: var(--accent-green);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Smart Spending</h3>
+                <p style="color: #64748b; text-align: center;">Learn how to make thoughtful spending decisions and distinguish between wants and needs.</p>
+            </div>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--primary-blue);">
+                <div class="icon-circle" style="background: #dbeafe;">
+                    <i class="fas fa-seedling" style="color: var(--primary-blue);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Growing Money</h3>
+                <p style="color: #64748b; text-align: center;">Understand basic concepts about how money can grow over time through saving and investing.</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <!-- Multiplex Ad -->
+            <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                data-ad-client="ca-pub-9383584644305078" data-ad-slot="2320363731"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- Financial Facts Section -->
+        <div class="content-section"
+            style="background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue)); color: white;">
+            <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px;">Fun Financial Facts</h2>
+
+            <div class="stats-container">
+                <div class="stat-box">
+                    <p style="font-size: 32px; font-weight: 700;">72%</p>
+                    <p style="font-size: 16px;">of teens want to learn about money management</p>
+                </div>
+
+                <div class="stat-box">
+                    <p style="font-size: 32px; font-weight: 700;">5X</p>
+                    <p style="font-size: 16px;">More likely to save if you start as a kid</p>
+                </div>
+
+                <div class="stat-box">
+                    <p style="font-size: 32px; font-weight: 700;">89%</p>
+                    <p style="font-size: 16px;">of kids say learning about money is important</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Parent Resources Section -->
+        <div class="content-section">
+            <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px; color: var(--dark-blue);">
+                Resources for Parents</h2>
+                
+            <div style="background: linear-gradient(to right, #1a4f8c, #2c6cb0); color: white; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+                <span class="offer-tag" style="background: white; color: var(--primary-blue);">Guide</span>
+                <h3 style="font-size: 20px; font-weight: 600; margin: 10px 0;">Teaching Kids About Money</h3>
+                <p style="margin-bottom: 15px;">Download our free guide with age-appropriate activities and lessons about financial literacy.</p>
+                <a href="#" style="color: white; text-decoration: underline; font-weight: 600;">Download Guide</a>
+            </div>
+            
+            <div style="background: linear-gradient(to right, #0ea5e9, #38bdf8); color: white; padding: 20px; border-radius: 12px;">
+                <span class="offer-tag" style="background: white; color: var(--accent-teal);">Video</span>
+                <h3 style="font-size: 20px; font-weight: 600; margin: 10px 0;">Family Money Activities</h3>
+                <p style="margin-bottom: 15px;">Watch our video series with fun activities to teach financial concepts at home.</p>
+                <a href="#" style="color: white; text-decoration: underline; font-weight: 600;">Watch Videos</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--accent-teal);">SecureBank Junior</h3>
+            <p style="color: #cbd5e1; margin-bottom: 25px; font-size: 15px;">Building financial literacy for the next generation.</p>
+
+            <div style="margin-bottom: 25px;">
+                <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: white;">Parent Support</h4>
+                <p style="color: #cbd5e1; margin-bottom: 8px; font-size: 14px;"><i class="fas fa-envelope"
+                        style="margin-right: 10px; color: var(--accent-teal);"></i> parents@securebankjunior.com</p>
+                <p style="color: #cbd5e1; font-size: 14px;"><i class="fas fa-phone"
+                        style="margin-right: 10px; color: var(--accent-teal);"></i> (800) 555-JUNIOR</p>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 14px;">Privacy Policy</a>
+                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 14px;">Parental Controls</a>
+                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 14px;">Safety Information</a>
+            </div>
+
+            <p style="color: #94a3b8; font-size: 14px; border-top: 1px solid #334155; padding-top: 20px;">&copy; 2023 SecureBank Junior. Financial education for youth.</p>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName + '-tab').classList.add('active');
+            
+            // Activate selected tab
+            event.currentTarget.classList.add('active');
+        }
+        
+        // Savings calculator functionality
+        function calculateSavings() {
+            const goalAmount = parseFloat(document.getElementById('goal-amount').value);
+            const weeklySavings = parseFloat(document.getElementById('weekly-savings').value);
+            const currentSavings = parseFloat(document.getElementById('current-savings').value);
+            
+            // Calculate weeks needed
+            const amountNeeded = goalAmount - currentSavings;
+            const weeksNeeded = Math.ceil(amountNeeded / weeklySavings);
+            
+            // Calculate completion date (18 weeks from now)
+            const today = new Date();
+            const completionDate = new Date();
+            completionDate.setDate(today.getDate() + (weeksNeeded * 7));
+            
+            // Format completion date
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = completionDate.toLocaleDateString('en-US', options);
+            
+            // Calculate progress percentage
+            const progressPercent = (currentSavings / goalAmount) * 100;
+            
+            // Update results
+            document.getElementById('savings-result').textContent = `$${goalAmount} in ${weeksNeeded} weeks`;
+            document.getElementById('weekly-amount').textContent = `$${weeklySavings}`;
+            document.getElementById('goal-date').textContent = formattedDate;
+            document.getElementById('savings-progress').style.width = `${progressPercent}%`;
+            
+            // Update progress text
+            document.querySelector('#savings-progress').nextElementSibling.textContent = 
+                `${progressPercent.toFixed(1)}% of your goal achieved`;
+        }
+        
+        // Budget calculator functionality
+        function calculateBudget() {
+            const weeklyIncome = parseFloat(document.getElementById('weekly-income').value);
+            const savingsPercent = parseFloat(document.getElementById('savings-percent').value);
+            const spendingPercent = parseFloat(document.getElementById('spending-percent').value);
+            const sharingPercent = parseFloat(document.getElementById('sharing-percent').value);
+            
+            // Calculate amounts
+            const savingsAmount = (weeklyIncome * savingsPercent) / 100;
+            const spendingAmount = (weeklyIncome * spendingPercent) / 100;
+            const sharingAmount = (weeklyIncome * sharingPercent) / 100;
+            
+            // Update results
+            document.querySelectorAll('.result-box .progress-fill')[0].style.width = `${savingsPercent}%`;
+            document.querySelectorAll('.result-box .progress-fill')[0].nextElementSibling.textContent = 
+                `$${savingsAmount.toFixed(2)} (${savingsPercent}%)`;
+            
+            document.querySelectorAll('.result-box .progress-fill')[1].style.width = `${spendingPercent}%`;
+            document.querySelectorAll('.result-box .progress-fill')[1].nextElementSibling.textContent = 
+                `$${spendingAmount.toFixed(2)} (${spendingPercent}%)`;
+            
+            document.querySelectorAll('.result-box .progress-fill')[2].style.width = `${sharingPercent}%`;
+            document.querySelectorAll('.result-box .progress-fill')[2].nextElementSibling.textContent = 
+                `$${sharingAmount.toFixed(2)} (${sharingPercent}%)`;
+        }
+        
+        // Quiz functionality
+        function checkAnswer() {
+            const selectedOption = document.querySelector('input[name="quiz-answer"]:checked');
+            const feedbackElement = document.getElementById('quiz-feedback');
+            
+            if (!selectedOption) {
+                feedbackElement.textContent = "Please select an answer first!";
+                feedbackElement.style.background = "#fee2e2";
+                feedbackElement.style.color = "#b91c1c";
+                feedbackElement.style.display = "block";
+                return;
+            }
+            
+            if (selectedOption.value === "A") {
+                feedbackElement.innerHTML = "<strong>Correct!</strong> 🎉 Saving money helps you prepare for future needs and wants, and it's an important habit to develop.";
+                feedbackElement.style.background = "#dcfce7";
+                feedbackElement.style.color = "#166534";
+            } else {
+                feedbackElement.innerHTML = "<strong>Not quite.</strong> 😊 The best reason to save money is to have it available for future needs and wants. Try again!";
+                feedbackElement.style.background = "#fef3c7";
+                feedbackElement.style.color = "#92400e";
+            }
+            
+            feedbackElement.style.display = "block";
+        }
+        
+        // Goal setting functionality
+        function addGoal() {
+            const goalName = document.getElementById('goal-name').value;
+            const goalCost = document.getElementById('goal-cost').value;
+            const goalDeadline = document.getElementById('goal-deadline').value;
+            
+            if (!goalName || !goalCost || !goalDeadline) {
+                alert("Please fill in all fields to add a goal.");
+                return;
+            }
+            
+            alert(`Goal "${goalName}" added successfully! You want to save $${goalCost} by ${goalDeadline}.`);
+            
+            // Clear form
+            document.getElementById('goal-name').value = '';
+            document.getElementById('goal-cost').value = '';
+            document.getElementById('goal-deadline').value = '';
+        }
+        
+        // Initialize with savings calculator tab active
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set first tab as active by default
+            switchTab('savings');
+            
+            // Set up slider synchronization
+            const sliders = document.querySelectorAll('.slider');
+            sliders.forEach(slider => {
+                const inputId = slider.id.replace('-slider', '');
+                const numberInput = document.getElementById(inputId);
+                
+                if (numberInput) {
+                    // Sync slider with number input
+                    slider.addEventListener('input', function() {
+                        numberInput.value = this.value;
+                    });
+                    
+                    // Sync number input with slider
+                    numberInput.addEventListener('input', function() {
+                        slider.value = this.value;
+                    });
+                }
+            });
+            
+            // Set default date for goal deadline (30 days from now)
+            const defaultDate = new Date();
+            defaultDate.setDate(defaultDate.getDate() + 30);
+            document.getElementById('goal-deadline').valueAsDate = defaultDate;
+            
+            // Calculate initial savings projection
+            calculateSavings();
+        });
+    </script>
+
+
+ <!-- ads  -->
+    <div id="ad-anchor-slot"></div>
+
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            alert('Right-click is disabled to protect our content.');
+        });
+
+        // Disable keyboard shortcuts
+        document.onkeydown = function (e) {
+            if (
+                (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c' || e.key === 'i' || e.key === 'j')) ||
+                e.key === 'F12' ||
+                (e.metaKey && e.altKey && e.key === 'i')
+            ) {
+                e.preventDefault();
+                alert('Access to developer tools and source code is disabled to protect our content.');
+                return false;
+            }
+            return true;
+        };
+
+        // Disable text selection
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        });
+
+        // Disable drag and drop
+        document.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+    <script>
+        window.googletag = window.googletag || { cmd: [] };
+        var anchorSlot;
+        googletag.cmd.push(function () {
+            anchorSlot = googletag.defineOutOfPageSlot('/23315732502/anchor', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+            if (anchorSlot) {
+                anchorSlot.addService(googletag.pubads());
+            }
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+
+  
+    <script>
+        (function () {
+            document.addEventListener("DOMContentLoaded", function () {
+                console.log("DOM fully loaded.");
+
+                function showRewardedAd() {
+                    if (!window.googletag || !googletag.cmd) {
+                        console.error("Google Ad Manager is not properly initialized.");
+                        return;
+                    }
+                    // reward ads
+                    googletag.cmd.push(function () {
+                        try {
+                            const rewardedSlot = googletag
+                                .defineOutOfPageSlot('/23315732502/Interreward', googletag.enums.OutOfPageFormat.REWARDED)
+                                .addService(googletag.pubads());
+
+                            googletag.enableServices();
+                            googletag.display(rewardedSlot);
+                            console.log("Attempting to display rewarded ad...");
+
+                            googletag.pubads().addEventListener("rewardedSlotReady", function (evt) {
+                                console.log("Rewarded ad ready.");
+                                evt.makeRewardedVisible();
+                            });
+
+                            googletag.pubads().addEventListener("rewardedSlotClosed", function () {
+                                console.log("Ad closed.");
+                                googletag.destroySlots([rewardedSlot]);
+                            });
+                        } catch (error) {
+                            console.error("Error during ad setup:", error);
+                        }
+                    });
+                }
+
+                // Add 2-second delay before showing the rewarded ad
+                setTimeout(function () {
+                    console.log("2 seconds elapsed, showing rewarded ad...");
+                    showRewardedAd();
+                }, 2000); // 2000 milliseconds = 2 seconds
+            });
+        })();
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureBank - Financial Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1a4f8c;
+            --secondary-blue: #2c6cb0;
+            --accent-gold: #d4af37;
+            --dark-blue: #1e293b;
+            --light-gray: #f8fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f1f5f9;
+            color: #334155;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 25px 0;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        
+        .age-btn {
+            display: block;
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            margin: 15px 0;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .age-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+        }
+        
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            margin: 10px;
+            flex: 1;
+            min-width: 130px;
+        }
+        
+        .footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+        }
+        
+        .ad-container {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .ad-label {
+            color: #64748b;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        
+        @media (min-width: 768px) {
+            .content-section {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            
+            .card {
+                flex-basis: calc(50% - 10px);
+            }
+            
+            .stats-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        .text-white {
+            color: white;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        
+        .btn-outline:hover {
+            background: var(--accent-gold);
+            color: white;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://googleads.g.doubleclick.net">
+    <link rel="preconnect" href="https://tpc.googlesyndication.com">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9383584644305078"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <div style="width: 50px; height: 50px; border-radius: 12px; background: var(--primary-blue); display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                    <i class="fas fa-university text-white" style="font-size: 24px;"></i>
+                </div>
+                <h1 style="font-size: 24px; font-weight: 700; color: var(--primary-blue);">SecureBank</h1>
+            </div>
+            <p style="color: var(--dark-blue); font-size: 16px;">Trusted Financial Solutions Since 1985</p>
+        </div>
+
+        <!-- ads unit  -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <!-- Display Ad -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9383584644305078"
+                data-ad-slot="2267542786" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="content-section" style="text-align: center;">
+            <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 15px; color: var(--dark-blue);">Your Financial Security Is Our <span style="color: var(--primary-blue);">Top Priority</span></h2>
+            <p style="color: #64748b; margin-bottom: 25px; font-size: 16px;">Experience banking excellence with tailored financial solutions for every stage of your life journey.</p>
+
+            <div style="background: var(--light-gray); padding: 20px; border-radius: 16px; margin: 20px 0;">
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 15px; color: var(--dark-blue);">Select Your Banking Needs</h3>
+                <p style="color: #64748b; margin-bottom: 20px; font-size: 15px;">We provide personalized financial services to help you achieve your goals</p>
+
+                <a href="adult.html" class="age-btn"
+                    style="background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue)); color: white;">
+                    <i class="fas fa-user-tie" style="margin-right: 10px; font-size: 24px;"></i>
+                    Personal Banking
+                </a>
+
+                <a href="child.html" class="age-btn"
+                    style="background: linear-gradient(to right, var(--accent-gold), #e6c65c); color: white;">
+                    <i class="fas fa-piggy-bank" style="margin-right: 10px; font-size: 24px;"></i>
+                    Youth Banking
+                </a>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="content-section">
+            <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px; color: var(--dark-blue);">
+                Why Bank With SecureBank?</h2>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--primary-blue);">
+                <div class="icon-circle" style="background: #dbeafe;">
+                    <i class="fas fa-shield-alt" style="color: var(--primary-blue);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Advanced Security</h3>
+                <p style="color: #64748b; text-align: center;">Your funds are protected with industry-leading security measures and FDIC insurance.</p>
+            </div>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--accent-gold);">
+                <div class="icon-circle" style="background: #fef3c7;">
+                    <i class="fas fa-hand-holding-usd" style="color: var(--accent-gold);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Competitive Rates</h3>
+                <p style="color: #64748b; text-align: center;">Enjoy competitive interest rates on savings accounts, CDs, and mortgage products.</p>
+            </div>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--primary-blue);">
+                <div class="icon-circle" style="background: #dbeafe;">
+                    <i class="fas fa-mobile-alt" style="color: var(--primary-blue);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Digital Banking</h3>
+                <p style="color: #64748b; text-align: center;">Bank anytime, anywhere with our award-winning mobile app and online banking platform.</p>
+            </div>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--accent-gold);">
+                <div class="icon-circle" style="background: #fef3c7;">
+                    <i class="fas fa-users" style="color: var(--accent-gold);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Personal Advisors</h3>
+                <p style="color: #64748b; text-align: center;">Get personalized financial guidance from our team of experienced banking professionals.</p>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <!-- Multiplex Ad -->
+            <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                data-ad-client="ca-pub-9383584644305078" data-ad-slot="2320363731"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="content-section"
+            style="background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue)); color: white;">
+            <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px;">By The Numbers</h2>
+
+            <div class="stats-container">
+                <div class="stat-box">
+                    <p style="font-size: 32px; font-weight: 700;">98%</p>
+                    <p style="font-size: 16px;">Customer Satisfaction</p>
+                </div>
+
+                <div class="stat-box">
+                    <p style="font-size: 32px; font-weight: 700;">$4.7B+</p>
+                    <p style="font-size: 16px;">Assets Managed</p>
+                </div>
+
+                <div class="stat-box">
+                    <p style="font-size: 32px; font-weight: 700;">35+</p>
+                    <p style="font-size: 16px;">Years Serving Clients</p>
+                </div>
+
+                <div class="stat-box">
+                    <p style="font-size: 32px; font-weight: 700;">120K+</p>
+                    <p style="font-size: 16px;">Happy Customers</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banking Products Section -->
+        <div class="content-section">
+            <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px; color: var(--dark-blue);">
+                Explore Our Banking Products</h2>
+                
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
+                <a href="#" style="display: inline-block; padding: 12px 25px; background: var(--light-gray); color: var(--primary-blue); border-radius: 30px; text-decoration: none; font-weight: 600; border: 1px solid #ddd;">
+                    <i class="fas fa-home" style="margin-right: 8px;"></i> Mortgages
+                </a>
+                <a href="#" style="display: inline-block; padding: 12px 25px; background: var(--light-gray); color: var(--primary-blue); border-radius: 30px; text-decoration: none; font-weight: 600; border: 1px solid #ddd;">
+                    <i class="fas fa-credit-card" style="margin-right: 8px;"></i> Credit Cards
+                </a>
+                <a href="#" style="display: inline-block; padding: 12px 25px; background: var(--light-gray); color: var(--primary-blue); border-radius: 30px; text-decoration: none; font-weight: 600; border: 1px solid #ddd;">
+                    <i class="fas fa-chart-line" style="margin-right: 8px;"></i> Investments
+                </a>
+                <a href="#" style="display: inline-block; padding: 12px 25px; background: var(--light-gray); color: var(--primary-blue); border-radius: 30px; text-decoration: none; font-weight: 600; border: 1px solid #ddd;">
+                    <i class="fas fa-university" style="margin-right: 8px;"></i> Loans
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--accent-gold);">SecureBank</h3>
+            <p style="color: #cbd5e1; margin-bottom: 25px; font-size: 15px;">Member FDIC. Equal Housing Lender.</p>
+
+            <div style="margin-bottom: 25px;">
+                <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: white;">Contact Us</h4>
+                <p style="color: #cbd5e1; margin-bottom: 8px; font-size: 14px;"><i class="fas fa-map-marker-alt"
+                        style="margin-right: 10px; color: var(--accent-gold);"></i> 123 Banking Avenue, Financial District</p>
+                <p style="color: #cbd5e1; margin-bottom: 8px; font-size: 14px;"><i class="fas fa-phone"
+                        style="margin-right: 10px; color: var(--accent-gold);"></i> (800) 123-BANK</p>
+                <p style="color: #cbd5e1; font-size: 14px;"><i class="fas fa-envelope"
+                        style="margin-right: 10px; color: var(--accent-gold);"></i> support@securebank.com</p>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 14px;">Privacy Policy</a>
+                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 14px;">Terms of Service</a>
+                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 14px;">Security Center</a>
+            </div>
+
+            <p style="color: #94a3b8; font-size: 14px; border-top: 1px solid #334155; padding-top: 20px;">&copy; 2023 SecureBank Financial Services. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>

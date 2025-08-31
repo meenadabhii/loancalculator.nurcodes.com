@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureBank - Financial Information Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://googleads.g.doubleclick.net">
+    <link rel="preconnect" href="https://tpc.googlesyndication.com">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9383584644305078"
+        crossorigin="anonymous"></script>
+
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+        (function () {
+            // Initialize googletag if not already defined
+            window.googletag = window.googletag || { cmd: [] };
+
+            // Ad slot variables
+            let adSlot1, adSlot2, anchorSlot;
+            const refreshInterval = 30000; // 30 seconds - more user-friendly refresh rate
+            let refreshTimer;
+
+            // Function to set up ads
+            function setupAds() {
+                googletag.cmd.push(function () {
+                    // Setup PubAds
+                    const pubads = googletag.pubads();
+                    pubads.enableSingleRequest();
+                    pubads.setCentering(true);
+
+                    // Apply geotargeting if available
+                    if (window.geoTarget) {
+                        pubads.setLocation(window.geoTarget);
+                    }
+
+                    // Define Ad Slots with consistent IDs
+                    adSlot1 = googletag.defineSlot(
+                        '/22792691312,23308311652/web_nurcodes.com_display_banner_0',
+                        [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                        'ad-slot-1'
+                    ).addService(pubads);
+
+                    adSlot2 = googletag.defineSlot(
+                        '/22792691312,23308311652/web_nurcodes.com_display_banner_1',
+                        [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                        'ad-slot-2'
+                    ).addService(pubads);
+
+                    // Define anchor ad with proper ID
+                    anchorSlot = googletag.defineOutOfPageSlot(
+                        '/22792691312,23308311652/web_nurcodes.com_display_banner_2',
+                        googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+                    );
+
+                    if (anchorSlot) {
+                        anchorSlot.addService(pubads);
+                        // Use the correct ID for the anchor ad
+                        anchorSlot.setElementId('ad-anchor-slot');
+                    }
+
+                    // Event listeners for ad loading
+                    pubads.addEventListener('slotRenderEnded', function (event) {
+                        // Handle ad render events if needed
+                        const slotId = event.slot.getSlotElementId();
+                        const isEmpty = event.isEmpty;
+
+                        // Example: hide containers with no ads
+                        if (isEmpty && document.getElementById(slotId)) {
+                            document.getElementById(slotId).style.display = 'none';
+                        }
+                    });
+
+                    // Enable services
+                    googletag.enableServices();
+
+                    // Display ads
+                    try {
+                        if (document.getElementById('ad-slot-1')) {
+                            googletag.display('ad-slot-1');
+                        }
+                        if (document.getElementById('ad-slot-2')) {
+                            googletag.display('ad-slot-2');
+                        }
+                        if (document.getElementById('ad-anchor-slot')) {
+                            googletag.display('ad-anchor-slot');
+                        }
+                    } catch (error) {
+                        console.log('Error displaying ads:', error);
+                    }
+
+                    // Set up periodic refresh with error handling
+                    setupAdRefresh();
+                });
+            }
+
+            // Function to handle ad refresh
+            function setupAdRefresh() {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                }
+
+                refreshTimer = setInterval(function () {
+                    try {
+                        // Only refresh if slots exist and are defined
+                        const slotsToRefresh = [];
+                        if (adSlot1) slotsToRefresh.push(adSlot1);
+                        if (adSlot2) slotsToRefresh.push(adSlot2);
+
+                        if (slotsToRefresh.length > 0) {
+                            googletag.cmd.push(function () {
+                                googletag.pubads().refresh(slotsToRefresh);
+                            });
+                        }
+                    } catch (error) {
+                        console.log('Error refreshing ads:', error);
+                        clearInterval(refreshTimer); // Stop trying on persistent errors
+                    }
+                }, refreshInterval);
+            }
+
+            // Check for ad blockers (simple detection)
+            function checkAdBlocker() {
+                const testAd = document.createElement('div');
+                testAd.innerHTML = '&nbsp;';
+                testAd.className = 'adsbox';
+                document.body.appendChild(testAd);
+
+                setTimeout(function () {
+                    if (testAd.offsetHeight === 0) {
+                        console.log('Ad blocker detected');
+                        // You can show a message to users or implement fallback content
+                    }
+                    document.body.removeChild(testAd);
+                }, 100);
+            }
+
+            // Initialize ads when DOM is ready
+            if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                setupAds();
+                checkAdBlocker();
+            } else {
+                document.addEventListener('DOMContentLoaded', function () {
+                    setupAds();
+                    checkAdBlocker();
+                });
+            }
+
+            // Clean up on page unload
+            window.addEventListener('beforeunload', function () {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                }
+            });
+        })();
+
+    </script>
+
+    <style>
+        #banner-ad {
+            width: 100%;
+            max-width: 425px;
+            margin: 1rem auto 0.5rem;
+            padding: 0.5rem;
+            background: hsl(240, 6%, 97%);
+            box-shadow: 0 4px 15px var(--shadow-dark);
+            border-radius: 8px;
+            position: relative;
+            text-align: center;
+            border: 1px solid var(--accent-gold);
+        }
+
+        #banner-ad::before {
+            content: "Advertisement";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--accent-gold);
+            background: var(--primary-dark);
+            padding: 0 8px;
+            border-radius: 4px;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .ad-divider {
+            width: 90%;
+            max-width: 425px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            margin: 0.5rem auto;
+        }
+    </style>
+
+  
+  
+    <style>
+        :root {
+            --primary-blue: #1a4f8c;
+            --secondary-blue: #2c6cb0;
+            --accent-gold: #d4af37;
+            --dark-blue: #1e293b;
+            --light-gray: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 25px 0;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .content-section {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .action-btn {
+            display: block;
+            padding: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            margin: 20px 0;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+        }
+
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            margin: 10px;
+            flex: 1;
+            min-width: 130px;
+        }
+
+        .footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .ad-container {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .ad-label {
+            color: #64748b;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .info-card {
+            background: linear-gradient(to right, #f8fafc, #e2e8f0);
+            border-left: 4px solid var(--accent-gold);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        .offer-tag {
+            background: var(--accent-gold);
+            color: white;
+            font-size: 14px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .tab-container {
+            display: flex;
+            border-bottom: 1px solid #cbd5e1;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #64748b;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+        }
+
+        .tab.active {
+            color: var(--primary-blue);
+            border-bottom: 3px solid var(--primary-blue);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .finance-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .finance-table th,
+        .finance-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .finance-table th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+
+        .finance-table tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .trend-up {
+            color: #16a34a;
+        }
+
+        .trend-down {
+            color: #dc2626;
+        }
+
+        @media (min-width: 768px) {
+            .content-section {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .card {
+                flex-basis: calc(50% - 10px);
+            }
+
+            .stats-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .info-cards {
+                display: flex;
+                gap: 15px;
+            }
+
+            .info-card {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header {
+                padding: 20px 0;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .action-btn {
+                padding: 15px;
+                font-size: 16px;
+            }
+
+            .tab-container {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+
+        .text-white {
+            color: white;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-gold);
+            border-radius: 4px;
+        }
+
+        .news-card {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .news-date {
+            min-width: 60px;
+            margin-right: 15px;
+            text-align: center;
+        }
+
+        .news-day {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .news-month {
+            font-size: 14px;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+
+        .news-content h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--dark-blue);
+        }
+
+        .news-content p {
+            color: #64748b;
+            font-size: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <div
+                    style="width: 50px; height: 50px; border-radius: 12px; background: var(--primary-blue); display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                    <i class="fas fa-chart-line text-white" style="font-size: 24px;"></i>
+                </div>
+                <h1 style="font-size: 24px; font-weight: 700; color: var(--primary-blue);">SecureBank Finance</h1>
+            </div>
+            <p style="color: var(--dark-blue); font-size: 16px;">Financial Insights & Market Intelligence</p>
+        </div>
+
+           <!-- ads  -->
+        <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+            <div id="ad-slot-1" class="ad-container" style="display: block !important;"></div>
+        </div>
+        <!-- Hero Section -->
+        <div class="content-section" style="text-align: center;">
+            <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 15px; color: var(--dark-blue);">Your <span
+                    style="color: var(--primary-blue);">Financial Intelligence</span> Hub</h2>
+            <p style="color: #64748b; margin-bottom: 25px; font-size: 16px;">Stay informed with the latest market
+                trends, economic insights, and financial strategies.</p>
+
+            <div style="background: var(--light-gray); padding: 25px; border-radius: 16px; margin: 20px 0;">
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 20px; color: var(--dark-blue);">Financial
+                    Resources</h3>
+                <p style="color: #64748b; margin-bottom: 25px; font-size: 15px;">Access our comprehensive financial
+                    tools and resources</p>
+
+                <a href="#" class="action-btn"
+                    style="background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue)); color: white;">
+                    <i class="fas fa-book" style="margin-right: 10px; font-size: 24px;"></i>
+                    Financial Education
+                </a>
+
+                <a href="#" class="action-btn"
+                    style="background: linear-gradient(to right, var(--accent-gold), #e6c65c); color: white;">
+                    <i class="fas fa-calculator" style="margin-right: 10px; font-size: 24px;"></i>
+                    Planning Tools
+                </a>
+            </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="content-section">
+            <div class="tab-container">
+                <div class="tab active" onclick="switchTab('market')">Market Data</div>
+                <div class="tab" onclick="switchTab('rates')">Interest Rates</div>
+                <div class="tab" onclick="switchTab('news')">Financial News</div>
+                <div class="tab" onclick="switchTab('tips')">Financial Tips</div>
+            </div>
+  <!-- ads units  -->
+
+                <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+                    <div id="ad-slot-2" class="ad-container" style="display: block !important;"></div>
+                </div>
+
+            <!-- Market Data Tab -->
+            <div id="market-tab" class="tab-content active">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--dark-blue);">Financial
+                    Market Overview</h2>
+                <p style="color: #64748b; margin-bottom: 25px;">Current market data and performance indicators</p>
+
+                <table class="finance-table">
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Value</th>
+                            <th>Change</th>
+                            <th>% Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>S&P 500</td>
+                            <td>4,432.65</td>
+                            <td class="trend-up">+28.73</td>
+                            <td class="trend-up">+0.65%</td>
+                        </tr>
+                        <tr>
+                            <td>Dow Jones</td>
+                            <td>34,500.21</td>
+                            <td class="trend-up">+112.45</td>
+                            <td class="trend-up">+0.33%</td>
+                        </tr>
+                        <tr>
+                            <td>NASDAQ</td>
+                            <td>13,765.84</td>
+                            <td class="trend-up">+86.32</td>
+                            <td class="trend-up">+0.63%</td>
+                        </tr>
+                        <tr>
+                            <td>Russell 2000</td>
+                            <td>1,865.43</td>
+                            <td class="trend-down">-5.67</td>
+                            <td class="trend-down">-0.30%</td>
+                        </tr>
+                        <tr>
+                            <td>10-Yr Treasury</td>
+                            <td>4.25%</td>
+                            <td class="trend-up">+0.03</td>
+                            <td class="trend-up">+0.71%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-card">
+                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">Market Analysis</h3>
+                    <p style="color: #64748b;">Equity markets showed moderate gains today amid positive earnings reports
+                        from the technology sector. The S&P 500 reached a new high for the year, while small caps faced
+                        slight pressure.</p>
+                </div>
+            </div>
+
+            <!-- Interest Rates Tab -->
+            <div id="rates-tab" class="tab-content">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--dark-blue);">Current
+                    Interest Rates</h2>
+                <p style="color: #64748b; margin-bottom: 25px;">Latest rates for banking products (as of today)</p>
+
+                <table class="finance-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Rate</th>
+                            <th>APY</th>
+                            <th>Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>30-Yr Fixed Mortgage</td>
+                            <td>6.75%</td>
+                            <td>6.85%</td>
+                            <td class="trend-down">-0.10%</td>
+                        </tr>
+                        <tr>
+                            <td>15-Yr Fixed Mortgage</td>
+                            <td>6.25%</td>
+                            <td>6.35%</td>
+                            <td class="trend-down">-0.05%</td>
+                        </tr>
+                        <tr>
+                            <td>5/1 ARM</td>
+                            <td>5.99%</td>
+                            <td>6.10%</td>
+                            <td class="trend-up">+0.05%</td>
+                        </tr>
+                        <tr>
+                            <td>Savings Account</td>
+                            <td>4.25%</td>
+                            <td>4.35%</td>
+                            <td class="trend-up">+0.10%</td>
+                        </tr>
+                        <tr>
+                            <td>1-Yr CD</td>
+                            <td>5.00%</td>
+                            <td>5.12%</td>
+                            <td class="trend-up">+0.15%</td>
+                        </tr>
+                        <tr>
+                            <td>5-Yr CD</td>
+                            <td>4.50%</td>
+                            <td>4.60%</td>
+                            <td class="trend-up">+0.10%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-card">
+                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">Rate Outlook</h3>
+                    <p style="color: #64748b;">The Federal Reserve's recent pause in rate hikes has provided some
+                        stability to mortgage rates. Savings rates continue to offer attractive returns for depositors.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Financial News Tab -->
+            <div id="news-tab" class="tab-content">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--dark-blue);">Latest
+                    Financial News</h2>
+                <p style="color: #64748b; margin-bottom: 25px;">Stay updated with the latest developments in the
+                    financial world</p>
+
+                <div class="news-card">
+                    <div class="news-date">
+                        <div class="news-day">12</div>
+                        <div class="news-month">Oct</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Fed Indicates Potential Rate Cuts in 2024</h3>
+                        <p>Federal Reserve officials suggest that inflation is cooling faster than expected, potentially
+                            paving the way for rate cuts next year.</p>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-date">
+                        <div class="news-day">11</div>
+                        <div class="news-month">Oct</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Tech Stocks Rally on AI Optimism</h3>
+                        <p>Major technology companies saw significant gains as investors bet on artificial intelligence
+                            driving future growth.</p>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-date">
+                        <div class="news-day">10</div>
+                        <div class="news-month">Oct</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Consumer Spending Exceeds Expectations</h3>
+                        <p>Retail sales data shows consumers continue to spend despite economic uncertainties,
+                            supporting economic growth.</p>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-date">
+                        <div class="news-day">09</div>
+                        <div class="news-month">Oct</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Housing Market Shows Signs of Stabilization</h3>
+                        <p>After months of decline, home prices are beginning to stabilize as mortgage rates moderate.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Tips Tab -->
+            <div id="tips-tab" class="tab-content">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--dark-blue);">Financial
+                    Planning Tips</h2>
+                <p style="color: #64748b; margin-bottom: 25px;">Expert advice to improve your financial health</p>
+
+                <div class="info-card">
+                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">1. Build an Emergency Fund</h3>
+                    <p style="color: #64748b;">Aim to save 3-6 months' worth of living expenses in a easily accessible
+                        account to cover unexpected financial challenges.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">2. Pay Down High-Interest Debt
+                    </h3>
+                    <p style="color: #64748b;">Focus on eliminating credit card debt and other high-interest loans
+                        before investing extra money.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">3. Diversify Your Investments
+                    </h3>
+                    <p style="color: #64748b;">Spread your investments across different asset classes to reduce risk and
+                        improve potential returns.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">4. Maximize Retirement
+                        Contributions</h3>
+                    <p style="color: #64748b;">Take full advantage of employer-matched retirement plans and
+                        tax-advantaged accounts like IRAs and 401(k)s.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">5. Review Your Insurance
+                        Coverage</h3>
+                    <p style="color: #64748b;">Regularly assess your insurance needs to ensure you're adequately
+                        protected against life's uncertainties.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="content-section">
+            <h2
+                style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px; color: var(--dark-blue);">
+                Financial Tools & Resources</h2>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--primary-blue);">
+                <div class="icon-circle" style="background: #dbeafe;">
+                    <i class="fas fa-calculator" style="color: var(--primary-blue);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Financial
+                    Calculators</h3>
+                <p style="color: #64748b; text-align: center;">Plan your financial future with our suite of interactive
+                    calculators for loans, savings, and investments.</p>
+            </div>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--accent-gold);">
+                <div class="icon-circle" style="background: #fef3c7;">
+                    <i class="fas fa-book-open" style="color: var(--accent-gold);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Learning Center
+                </h3>
+                <p style="color: #64748b; text-align: center;">Access our comprehensive library of articles, guides, and
+                    tutorials on personal finance topics.</p>
+            </div>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--primary-blue);">
+                <div class="icon-circle" style="background: #dbeafe;">
+                    <i class="fas fa-chart-pie" style="color: var(--primary-blue);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Market Analysis
+                </h3>
+                <p style="color: #64748b; text-align: center;">Get expert insights and analysis on market trends,
+                    economic indicators, and investment opportunities.</p>
+            </div>
+
+            <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--accent-gold);">
+                <div class="icon-circle" style="background: #fef3c7;">
+                    <i class="fas fa-user-tie" style="color: var(--accent-gold);"></i>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Advisor
+                    Connection</h3>
+                <p style="color: #64748b; text-align: center;">Connect with our financial advisors for personalized
+                    guidance tailored to your financial goals.</p>
+            </div>
+        </div>
+
+       
+
+        <!-- Economic Indicators Section -->
+        <div class="content-section"
+            style="background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue)); color: white;">
+            <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px;">Key Economic
+                Indicators</h2>
+
+            <div class="stats-container">
+                <div class="stat-box">
+                    <p style="font-size: 32px; font-weight: 700;">3.7%</p>
+                    <p style="font-size: 16px;">Unemployment Rate</p>
+                </div>
+
+                <div class="stat-box">
+                    <p style="font-size: 32px; font-weight: 700;">3.2%</p>
+                    <p style="font-size: 16px;">Inflation (CPI)</p>
+                </div>
+
+                <div class="stat-box">
+                    <p style="font-size: 32px; font-weight: 700;">2.1%</p>
+                    <p style="font-size: 16px;">GDP Growth</p>
+                </div>
+
+                <div class="stat-box">
+                    <p style="font-size: 32px; font-weight: 700;">5.5%</p>
+                    <p style="font-size: 16px;">Fed Funds Rate</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Planning Section -->
+        <div class="content-section">
+            <h2
+                style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px; color: var(--dark-blue);">
+                Financial Planning Guide</h2>
+
+            <div
+                style="background: linear-gradient(to right, #1a4f8c, #2c6cb0); color: white; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+                <span class="offer-tag" style="background: white; color: var(--primary-blue);">Free Resource</span>
+                <h3 style="font-size: 20px; font-weight: 600; margin: 10px 0;">Retirement Planning Worksheet</h3>
+                <p style="margin-bottom: 15px;">Download our free worksheet to calculate your retirement needs and
+                    create a personalized savings plan.</p>
+                <a href="#" style="color: white; text-decoration: underline; font-weight: 600;">Download Now</a>
+            </div>
+
+            <div
+                style="background: linear-gradient(to right, #d4af37, #e6c65c); color: white; padding: 20px; border-radius: 12px;">
+                <span class="offer-tag" style="background: white; color: var(--accent-gold);">New</span>
+                <h3 style="font-size: 20px; font-weight: 600; margin: 10px 0;">College Savings Calculator</h3>
+                <p style="margin-bottom: 15px;">Plan for education expenses with our interactive calculator that
+                    projects future costs and savings needs.</p>
+                <a href="#" style="color: white; text-decoration: underline; font-weight: 600;">Try Calculator</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--accent-gold);">SecureBank
+                Financial Center</h3>
+            <p style="color: #cbd5e1; margin-bottom: 25px; font-size: 15px;">Your trusted source for financial
+                information and insights.</p>
+
+
+
+            <p style="color: #94a3b8; font-size: 14px; border-top: 1px solid #334155; padding-top: 20px;">&copy; 2023
+                SecureBank Financial Information Services. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabName + '-tab').classList.add('active');
+
+            // Activate selected tab
+            event.currentTarget.classList.add('active');
+        }
+
+        // Initialize with market data tab active
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set first tab as active by default
+            switchTab('market');
+        });
+    </script>
+
+
+<!-- ads  -->
+    <div id="ad-anchor-slot"></div>
+
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            alert('Right-click is disabled to protect our content.');
+        });
+
+        // Disable keyboard shortcuts
+        document.onkeydown = function (e) {
+            if (
+                (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c' || e.key === 'i' || e.key === 'j')) ||
+                e.key === 'F12' ||
+                (e.metaKey && e.altKey && e.key === 'i')
+            ) {
+                e.preventDefault();
+                alert('Access to developer tools and source code is disabled to protect our content.');
+                return false;
+            }
+            return true;
+        };
+
+        // Disable text selection
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        });
+
+        // Disable drag and drop
+        document.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+    <script>
+        window.googletag = window.googletag || { cmd: [] };
+        var anchorSlot;
+        googletag.cmd.push(function () {
+            anchorSlot = googletag.defineOutOfPageSlot('/22792691312,23308311652/web_nurcodes.com_display_banner_2', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+            if (anchorSlot) {
+                anchorSlot.addService(googletag.pubads());
+            }
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    
+    <script>
+        (function () {
+            document.addEventListener("DOMContentLoaded", function () {
+                console.log("DOM fully loaded.");
+
+                function showRewardedAd() {
+                    if (!window.googletag || !googletag.cmd) {
+                        console.error("Google Ad Manager is not properly initialized.");
+                        return;
+                    }
+                    // reward ads
+                    googletag.cmd.push(function () {
+                        try {
+                            const rewardedSlot = googletag
+                                .defineOutOfPageSlot('/22792691312,23308311652/web_nurcodes.com_display_banner_3', googletag.enums.OutOfPageFormat.REWARDED)
+                                .addService(googletag.pubads());
+
+                            googletag.enableServices();
+                            googletag.display(rewardedSlot);
+                            console.log("Attempting to display rewarded ad...");
+
+                            googletag.pubads().addEventListener("rewardedSlotReady", function (evt) {
+                                console.log("Rewarded ad ready.");
+                                evt.makeRewardedVisible();
+                            });
+
+                            googletag.pubads().addEventListener("rewardedSlotClosed", function () {
+                                console.log("Ad closed.");
+                                googletag.destroySlots([rewardedSlot]);
+                            });
+                        } catch (error) {
+                            console.error("Error during ad setup:", error);
+                        }
+                    });
+                }
+
+                // Add 2-second delay before showing the rewarded ad
+                setTimeout(function () {
+                    console.log("2 seconds elapsed, showing rewarded ad...");
+                    showRewardedAd();
+                }, 2000); // 2000 milliseconds = 2 seconds
+            });
+        })();
+    </script>
+
+
+      
+</body>
+
+</html
