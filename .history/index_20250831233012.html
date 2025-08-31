@@ -315,81 +315,52 @@
             margin: 10px auto;
             border-radius: 2px;
         }
-:root {
-    --gradient-primary: linear-gradient(135deg, #ff9966, #ff5e62); /* Orange → Red */
-    --gradient-secondary: linear-gradient(135deg, #36d1dc, #5b86e5); /* Cyan → Blue */
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.25);
-}
 
-/* container */
-.btn-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 600px;
-    margin: 40px auto;
-}
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
 
-/* buttons */
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 18px 40px; /* width zyada */
-    border-radius: 50px; /* round pill shape */
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 20px;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease-in-out;
-    box-shadow: var(--shadow);
-    position: relative;
-    overflow: hidden;
-}
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
 
-/* hover shine */
-.btn::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: rgba(255,255,255,0.3);
-    transform: skewX(-25deg);
-    transition: left 0.5s ease;
-}
-.btn:hover::after {
-    left: 125%;
-}
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
 
-/* primary */
-.btn-primary {
-    background: var(--gradient-primary);
-    color: white;
-}
-.btn-primary:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(255,94,98,0.5);
-}
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
 
-/* secondary */
-.btn-secondary {
-    background: var(--gradient-secondary);
-    color: white;
-}
-.btn-secondary:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(91,134,229,0.5);
-}
+        .btn-secondary {
+            background: var(--gradient-secondary);
+            color: white;
+        }
 
-/* icons */
-.btn i {
-    margin-right: 14px;
-    font-size: 26px;
-}
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
 
+        .btn i {
+            margin-right: 12px;
+            font-size: 24px;
+        }
 
         .features-grid {
             display: grid;
@@ -708,24 +679,126 @@
         <div id="banner-ad" class="ads-box" style="min-height: 250px;">
             <div id="ad-slot-1" class="ad-container" style="display: block !important;"></div>
         </div>
-        <!-- Hero Section -->
-        <div class="content-section">
-            <h2 class="section-title">Your Financial <span class="highlight">Future</span> Starts Here</h2>
-            <p style="text-align: center; color: var(--gray); margin-bottom: 30px; font-size: 18px;">We provide
-                personalized financial services to help you achieve your goals at every stage of life</p>
+        <!-- Hero Section --><div class="max-w-4xl mx-auto px-4 py-16 text-center">
+    <!-- Title with enhanced highlight effect -->
+    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+        Your Financial <span class="gradient-text bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent relative">
+            Future
+            <span class="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-indigo-400 transform scale-x-0 transition-transform duration-300 origin-left hover:scale-x-100"></span>
+        </span> Starts Here
+    </h2>
+    
+    <!-- Description -->
+    <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
+        We provide personalized financial services to help you achieve your goals at every stage of life
+    </p>
 
-            <div class="btn-container">
-                <a href="fin24.html" class="btn btn-primary">
-                    <i class="fas fa-briefcase"></i>
-                    Premier Banking (18+)
-                </a>
+    <!-- Buttons container -->
+    <div class="flex flex-col sm:flex-row justify-center gap-5">
+        <!-- Premier Banking Button -->
+        <a href="fin24.html" class="btn-primary group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-medium text-white transition-all duration-300 ease-out rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800">
+            <span class="absolute inset-0 rounded-full bg-white opacity-10 group-hover:opacity-0 transition-all duration-300"></span>
+            <span class="absolute bottom-0 right-0 w-8 h-8 -mb-2 -mr-2 transition-all duration-300 transform translate-x-0 translate-y-0 rotate-45 group-hover:-translate-y-2 group-hover:translate-x-2 bg-white opacity-30"></span>
+            <span class="relative flex items-center">
+                <i class="fas fa-briefcase mr-3"></i>
+                Premier Banking (18+)
+            </span>
+        </a>
 
-                <a href="insurance.html" class="btn btn-secondary">
-                    <i class="fas fa-piggy-bank"></i>
-                    Future Savers (Under 18)
-                </a>
-            </div>
-        </div>
+        <!-- Future Savers Button -->
+        <a href="insurance.html" class="btn-secondary group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-medium text-white transition-all duration-300 ease-out rounded-full shadow-lg bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800">
+            <span class="absolute inset-0 rounded-full bg-white opacity-10 group-hover:opacity-0 transition-all duration-300"></span>
+            <span class="absolute bottom-0 right-0 w-8 h-8 -mb-2 -mr-2 transition-all duration-300 transform translate-x-0 translate-y-0 rotate-45 group-hover:-translate-y-2 group-hover:translate-x-2 bg-white opacity-30"></span>
+            <span class="relative flex items-center">
+                <i class="fas fa-piggy-bank mr-3"></i>
+                Future Savers (Under 18)
+            </span>
+        </a>
+    </div>
+</div>
+
+<style>
+    .gradient-text {
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        transition: background-position 0.8s ease;
+    }
+    
+    .gradient-text:hover {
+        background-position: 0 0;
+    }
+    
+    .btn-primary, .btn-secondary {
+        transform: translateY(0);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-primary:hover, .btn-secondary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+</style>
+       <div class="max-w-4xl mx-auto px-4 py-16 text-center">
+    <!-- Title with enhanced highlight effect -->
+    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+        Your Financial <span class="gradient-text bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent relative">
+            Future
+            <span class="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-indigo-400 transform scale-x-0 transition-transform duration-300 origin-left hover:scale-x-100"></span>
+        </span> Starts Here
+    </h2>
+    
+    <!-- Description -->
+    <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
+        We provide personalized financial services to help you achieve your goals at every stage of life
+    </p>
+
+    <!-- Buttons container -->
+    <div class="flex flex-col sm:flex-row justify-center gap-5">
+        <!-- Premier Banking Button -->
+        <a href="fin24.html" class="btn-primary group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-medium text-white transition-all duration-300 ease-out rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800">
+            <span class="absolute inset-0 rounded-full bg-white opacity-10 group-hover:opacity-0 transition-all duration-300"></span>
+            <span class="absolute bottom-0 right-0 w-8 h-8 -mb-2 -mr-2 transition-all duration-300 transform translate-x-0 translate-y-0 rotate-45 group-hover:-translate-y-2 group-hover:translate-x-2 bg-white opacity-30"></span>
+            <span class="relative flex items-center">
+                <i class="fas fa-briefcase mr-3"></i>
+                Premier Banking (18+)
+            </span>
+        </a>
+
+        <!-- Future Savers Button -->
+        <a href="insurance.html" class="btn-secondary group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-medium text-white transition-all duration-300 ease-out rounded-full shadow-lg bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800">
+            <span class="absolute inset-0 rounded-full bg-white opacity-10 group-hover:opacity-0 transition-all duration-300"></span>
+            <span class="absolute bottom-0 right-0 w-8 h-8 -mb-2 -mr-2 transition-all duration-300 transform translate-x-0 translate-y-0 rotate-45 group-hover:-translate-y-2 group-hover:translate-x-2 bg-white opacity-30"></span>
+            <span class="relative flex items-center">
+                <i class="fas fa-piggy-bank mr-3"></i>
+                Future Savers (Under 18)
+            </span>
+        </a>
+    </div>
+</div>
+
+<style>
+    .gradient-text {
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        transition: background-position 0.8s ease;
+    }
+    
+    .gradient-text:hover {
+        background-position: 0 0;
+    }
+    
+    .btn-primary, .btn-secondary {
+        transform: translateY(0);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-primary:hover, .btn-secondary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+</style>
         <div class="stats">
             <div class="stat-item">
                 <i class="fas fa-shield-alt"></i> FDIC Insured

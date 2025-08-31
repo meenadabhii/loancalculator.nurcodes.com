@@ -315,81 +315,52 @@
             margin: 10px auto;
             border-radius: 2px;
         }
-:root {
-    --gradient-primary: linear-gradient(135deg, #ff9966, #ff5e62); /* Orange → Red */
-    --gradient-secondary: linear-gradient(135deg, #36d1dc, #5b86e5); /* Cyan → Blue */
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.25);
-}
 
-/* container */
-.btn-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 600px;
-    margin: 40px auto;
-}
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
 
-/* buttons */
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 18px 40px; /* width zyada */
-    border-radius: 50px; /* round pill shape */
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 20px;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease-in-out;
-    box-shadow: var(--shadow);
-    position: relative;
-    overflow: hidden;
-}
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
 
-/* hover shine */
-.btn::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: rgba(255,255,255,0.3);
-    transform: skewX(-25deg);
-    transition: left 0.5s ease;
-}
-.btn:hover::after {
-    left: 125%;
-}
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
 
-/* primary */
-.btn-primary {
-    background: var(--gradient-primary);
-    color: white;
-}
-.btn-primary:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(255,94,98,0.5);
-}
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
 
-/* secondary */
-.btn-secondary {
-    background: var(--gradient-secondary);
-    color: white;
-}
-.btn-secondary:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(91,134,229,0.5);
-}
+        .btn-secondary {
+            background: var(--gradient-secondary);
+            color: white;
+        }
 
-/* icons */
-.btn i {
-    margin-right: 14px;
-    font-size: 26px;
-}
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
 
+        .btn i {
+            margin-right: 12px;
+            font-size: 24px;
+        }
 
         .features-grid {
             display: grid;
@@ -714,17 +685,15 @@
             <p style="text-align: center; color: var(--gray); margin-bottom: 30px; font-size: 18px;">We provide
                 personalized financial services to help you achieve your goals at every stage of life</p>
 
-            <div class="btn-container">
-                <a href="fin24.html" class="btn btn-primary">
-                    <i class="fas fa-briefcase"></i>
-                    Premier Banking (18+)
-                </a>
+        <a href="learn.html" class="action-btn" style="background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue)); color: white;">
+    <i class="fas fa-graduation-cap" style="margin-right: 10px; font-size: 24px;"></i>
+    Start Learning
+</a>
 
-                <a href="insurance.html" class="btn btn-secondary">
-                    <i class="fas fa-piggy-bank"></i>
-                    Future Savers (Under 18)
-                </a>
-            </div>
+<a href="quiz.html" class="action-btn" style="background: linear-gradient(to right, var(--accent-teal), #38bdf8); color: white;">
+    <i class="fas fa-gamepad" style="margin-right: 10px; font-size: 24px;"></i>
+    Play Finance Games
+</a>
         </div>
         <div class="stats">
             <div class="stat-item">

@@ -316,10 +316,10 @@
             border-radius: 2px;
         }
 :root {
-    --gradient-primary: linear-gradient(135deg, #ff9966, #ff5e62); /* Orange → Red */
-    --gradient-secondary: linear-gradient(135deg, #36d1dc, #5b86e5); /* Cyan → Blue */
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.25);
+    --gradient-primary: linear-gradient(135deg, #ff512f, #dd2476); /* Orange → Pink */
+    --gradient-secondary: linear-gradient(135deg, #24c6dc, #514a9d); /* Blue → Purple */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 /* container */
@@ -327,7 +327,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 600px;
+    max-width: 500px;
     margin: 40px auto;
 }
 
@@ -336,32 +336,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 18px 40px; /* width zyada */
-    border-radius: 50px; /* round pill shape */
+    padding: 20px 30px;
+    border-radius: 14px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 19px;
     letter-spacing: 0.5px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.35s ease-in-out;
     box-shadow: var(--shadow);
     position: relative;
     overflow: hidden;
 }
 
-/* hover shine */
-.btn::after {
+/* glowing effect */
+.btn::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: rgba(255,255,255,0.3);
-    transform: skewX(-25deg);
-    transition: left 0.5s ease;
-}
-.btn:hover::after {
-    left: 125%;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 60%);
+    transform: rotate(25deg);
+    transition: all 0.5s ease;
+    opacity: 0;
 }
 
 /* primary */
@@ -370,8 +368,11 @@
     color: white;
 }
 .btn-primary:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(255,94,98,0.5);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(221,36,118,0.5);
+}
+.btn-primary:hover::before {
+    opacity: 1;
 }
 
 /* secondary */
@@ -380,8 +381,11 @@
     color: white;
 }
 .btn-secondary:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(91,134,229,0.5);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(81,74,157,0.5);
+}
+.btn-secondary:hover::before {
+    opacity: 1;
 }
 
 /* icons */
