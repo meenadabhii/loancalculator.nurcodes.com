@@ -4,16 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureBank - Financial Information Center</title>
+    <title>SecureBank - Fund Management</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
-    <link rel="preconnect" href="https://googleads.g.doubleclick.net">
-    <link rel="preconnect" href="https://tpc.googlesyndication.com">
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9383584644305078"
-        crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
@@ -168,6 +160,7 @@
             max-width: 425px;
             margin: 1rem auto 0.5rem;
             padding: 0.5rem;
+            background: hsl(240, 6%, 97%);
             box-shadow: 0 4px 15px var(--shadow-dark);
             border-radius: 8px;
             position: relative;
@@ -198,6 +191,7 @@
             margin: 0.5rem auto;
         }
     </style>
+
 
 
 
@@ -260,7 +254,7 @@
 
         .action-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(96, 238, 15, 0.15);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         .icon-circle {
@@ -318,7 +312,7 @@
             margin-bottom: 8px;
         }
 
-        .info-card {
+        .account-card {
             background: linear-gradient(to right, #f8fafc, #e2e8f0);
             border-left: 4px solid var(--accent-gold);
             padding: 20px;
@@ -337,63 +331,106 @@
             font-weight: 600;
         }
 
-        .tab-container {
-            display: flex;
-            border-bottom: 1px solid #cbd5e1;
-            margin-bottom: 20px;
-            overflow-x: auto;
+        .calculator {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
         }
 
-        .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            font-weight: 600;
-            color: #64748b;
-            border-bottom: 3px solid transparent;
-            white-space: nowrap;
+        .form-group {
+            margin-bottom: 15px;
         }
 
-        .tab.active {
-            color: var(--primary-blue);
-            border-bottom: 3px solid var(--primary-blue);
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
+        .form-group label {
             display: block;
-        }
-
-        .finance-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-        }
-
-        .finance-table th,
-        .finance-table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .finance-table th {
-            background-color: #f1f5f9;
+            margin-bottom: 5px;
             font-weight: 600;
             color: var(--dark-blue);
         }
 
-        .finance-table tr:hover {
-            background-color: #f8fafc;
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
         }
 
-        .trend-up {
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .slider-container {
+            margin-top: 10px;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #cbd5e1;
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            cursor: pointer;
+        }
+
+        .result-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .result-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .fund-card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .fund-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: #dbeafe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-blue);
+        }
+
+        .fund-details {
+            flex: 1;
+        }
+
+        .fund-performance {
+            font-weight: 600;
             color: #16a34a;
         }
 
-        .trend-down {
+        .performance-negative {
             color: #dc2626;
         }
 
@@ -414,13 +451,19 @@
                 justify-content: center;
             }
 
-            .info-cards {
+            .account-cards {
                 display: flex;
                 gap: 15px;
             }
 
-            .info-card {
+            .account-card {
                 flex: 1;
+            }
+
+            .calculator-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
             }
         }
 
@@ -442,14 +485,23 @@
                 font-size: 16px;
             }
 
-            .tab-container {
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
+            .calculator-grid {
+                display: block;
             }
         }
 
         .text-white {
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-gold);
             color: white;
         }
 
@@ -467,43 +519,40 @@
             border-radius: 4px;
         }
 
-        .news-card {
+        .tab-container {
             display: flex;
+            border-bottom: 1px solid #cbd5e1;
             margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e2e8f0;
         }
 
-        .news-date {
-            min-width: 60px;
-            margin-right: 15px;
-            text-align: center;
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #64748b;
+            border-bottom: 3px solid transparent;
         }
 
-        .news-day {
-            font-size: 24px;
-            font-weight: 700;
+        .tab.active {
             color: var(--primary-blue);
+            border-bottom: 3px solid var(--primary-blue);
         }
 
-        .news-month {
-            font-size: 14px;
-            color: #64748b;
-            text-transform: uppercase;
+        .tab-content {
+            display: none;
         }
 
-        .news-content h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
-            color: var(--dark-blue);
-        }
-
-        .news-content p {
-            color: #64748b;
-            font-size: 15px;
+        .tab-content.active {
+            display: block;
         }
     </style>
 
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://googleads.g.doubleclick.net">
+    <link rel="preconnect" href="https://tpc.googlesyndication.com">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9383584644305078"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -515,39 +564,40 @@
                     style="width: 50px; height: 50px; border-radius: 12px; background: var(--primary-blue); display: flex; align-items: center; justify-content: center; margin-right: 10px;">
                     <i class="fas fa-chart-line text-white" style="font-size: 24px;"></i>
                 </div>
-                <h1 style="font-size: 24px; font-weight: 700; color: var(--primary-blue);">SecureBank Finance</h1>
+                <h1 style="font-size: 24px; font-weight: 700; color: var(--primary-blue);">SecureBank Funds</h1>
             </div>
-            <p style="color: var(--dark-blue); font-size: 16px;">Financial Insights & Market Intelligence</p>
+            <p style="color: var(--dark-blue); font-size: 16px;">Smart Investing for Your Future</p>
         </div>
-
         <!-- ads  -->
         <div id="banner-ad" class="ads-box" style="min-height: 250px;">
             <div id="ad-slot-1" class="ad-container" style="display: block !important;"></div>
         </div>
+
         <!-- Hero Section -->
         <div class="content-section" style="text-align: center;">
-            <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 15px; color: var(--dark-blue);">Your <span
-                    style="color: var(--primary-blue);">Financial Intelligence</span> Hub</h2>
-            <p style="color: #64748b; margin-bottom: 25px; font-size: 16px;">Stay informed with the latest market
-                trends, economic insights, and financial strategies.</p>
+            <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 15px; color: var(--dark-blue);">Grow Your <span
+                    style="color: var(--primary-blue);">Wealth</span> with Our Funds</h2>
+            <p style="color: #64748b; margin-bottom: 25px; font-size: 16px;">Discover investment opportunities tailored
+                to your financial goals and risk tolerance.</p>
 
             <div style="background: var(--light-gray); padding: 25px; border-radius: 16px; margin: 20px 0;">
-                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 20px; color: var(--dark-blue);">Financial
-                    Resources</h3>
-                <p style="color: #64748b; margin-bottom: 25px; font-size: 15px;">Access our comprehensive financial
-                    tools and resources</p>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 20px; color: var(--dark-blue);">Investment
+                    Options</h3>
+                <p style="color: #64748b; margin-bottom: 25px; font-size: 15px;">Choose the investment strategy that
+                    fits your needs</p>
 
                 <a href="#"
                     class="action-btn relative z-10 inline-flex items-center justify-center px-12 py-5 rounded-full font-bold text-lg text-white shadow-md transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl active:scale-105 active:shadow-xl overflow-hidden"
-                    style="background: linear-gradient(135deg, #ff6a00, #ee0909);"> <i class="fas fa-book"
-                        style="margin-right: 10px; font-size: 24px;"></i>
-                    Financial Education
+                    style="background: linear-gradient(135deg, #0b07f7, #ee0909);">
+                    <i class="fas fa-hand-holding-usd" style="margin-right: 10px; font-size: 24px;"></i>
+                    Explore Mutual Funds
                 </a>
 
-                <a href="#" class="action-btn"
-                    style="background: linear-gradient(to right, var(--accent-gold), #1304ee); color: white;">
-                    <i class="fas fa-calculator" style="margin-right: 10px; font-size: 24px;"></i>
-                    Planning Tools
+                <a href="#"
+                    class="action-btn relative z-10 inline-flex items-center justify-center px-12 py-5 rounded-full font-bold text-lg text-white shadow-md transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl active:scale-105 active:shadow-xl overflow-hidden"
+                    style="background: linear-gradient(135deg, #ff6a00, #ee0909);">
+                    <i class="fas fa-chart-pie" style="margin-right: 10px; font-size: 24px;"></i>
+                    ETF Portfolio
                 </a>
             </div>
         </div>
@@ -555,231 +605,169 @@
         <!-- Tab Navigation -->
         <div class="content-section">
             <div class="tab-container">
-                <div class="tab active" onclick="switchTab('market')">Market Data</div>
-                <div class="tab" onclick="switchTab('rates')">Interest Rates</div>
-                <div class="tab" onclick="switchTab('news')">Financial News</div>
-                <div class="tab" onclick="switchTab('tips')">Financial Tips</div>
+                <div class="tab active" onclick="switchTab('calculator')">Investment Calculator</div>
+                <div class="tab" onclick="switchTab('performance')">Fund Performance</div>
+                <div class="tab" onclick="switchTab('portfolio')">My Portfolio</div>
             </div>
-            <!-- ads units  -->
 
+            <!-- Calculator Tab -->
+            <div id="calculator-tab" class="tab-content active">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--dark-blue);">Investment
+                    Growth Calculator</h2>
+                <p style="color: #64748b; margin-bottom: 25px;">See how your investments can grow over time with
+                    compound interest.</p>
+
+                <div class="calculator">
+                    <div class="form-group">
+                        <label for="investment-amount">Initial Investment ($)</label>
+                        <input type="number" id="investment-amount" value="10000" min="100" step="500">
+                        <div class="slider-container">
+                            <input type="range" min="100" max="100000" value="10000" class="slider"
+                                id="investment-slider">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="monthly-contribution">Monthly Contribution ($)</label>
+                        <input type="number" id="monthly-contribution" value="200" min="0" step="50">
+                        <div class="slider-container">
+                            <input type="range" min="0" max="5000" value="200" class="slider" id="contribution-slider">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest-rate">Annual Interest Rate (%)</label>
+                        <input type="number" id="interest-rate" value="7" min="1" max="30" step="0.1">
+                        <div class="slider-container">
+                            <input type="range" min="1" max="30" value="7" step="0.1" class="slider" id="rate-slider">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="investment-years">Investment Period (Years)</label>
+                        <input type="number" id="investment-years" value="20" min="1" max="50">
+                        <div class="slider-container">
+                            <input type="range" min="1" max="50" value="20" class="slider" id="years-slider">
+                        </div>
+                    </div>
+
+                    <button onclick="calculateInvestment()" class="action-btn"
+                        style="background: var(--primary-blue); color: white; border: none; cursor: pointer;">
+                        Calculate Growth
+                    </button>
+
+                    <div class="result-box">
+                        <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">Projected Investment Value
+                        </h3>
+                        <div class="result-value" id="result-value">$38,696.84</div>
+                        <p style="color: #64748b; margin-top: 10px;">Total contributions: <span
+                                id="total-contributions">$58,000.00</span></p>
+                        <p style="color: #64748b;">Interest earned: <span id="interest-earned">$20,696.84</span></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Performance Tab -->
+            <div id="performance-tab" class="tab-content">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--dark-blue);">Fund
+                    Performance</h2>
+                <p style="color: #64748b; margin-bottom: 25px;">Track the performance of our top investment funds.</p>
+
+                <div class="fund-card">
+                    <div class="fund-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="fund-details">
+                        <h3 style="font-size: 18px; font-weight: 600;">Global Growth Fund</h3>
+                        <p style="color: #64748b; font-size: 14px;">International equities</p>
+                    </div>
+                    <div class="fund-performance">+12.4%</div>
+                </div>
+
+                <div class="fund-card">
+                    <div class="fund-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="fund-details">
+                        <h3 style="font-size: 18px; font-weight: 600;">Real Estate Fund</h3>
+                        <p style="color: #64748b; font-size: 14px;">Commercial and residential properties</p>
+                    </div>
+                    <div class="fund-performance">+8.7%</div>
+                </div>
+
+                <div class="fund-card">
+                    <div class="fund-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="fund-details">
+                        <h3 style="font-size: 18px; font-weight: 600;">Technology Fund</h3>
+                        <p style="color: #64748b; font-size: 14px;">Innovative tech companies</p>
+                    </div>
+                    <div class="fund-performance">+15.2%</div>
+                </div>
+
+                <div class="fund-card">
+                    <div class="fund-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="fund-details">
+                        <h3 style="font-size: 18px; font-weight: 600;">Bond Fund</h3>
+                        <p style="color: #64748b; font-size: 14px;">Government and corporate bonds</p>
+                    </div>
+                    <div class="fund-performance">+3.8%</div>
+                </div>
+            </div>
+
+
+            <!-- ads units  -->
             <div id="banner-ad" class="ads-box" style="min-height: 250px;">
                 <div id="ad-slot-2" class="ad-container" style="display: block !important;"></div>
             </div>
 
-            <!-- Market Data Tab -->
-            <div id="market-tab" class="tab-content active">
-                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--dark-blue);">Financial
-                    Market Overview</h2>
-                <p style="color: #64748b; margin-bottom: 25px;">Current market data and performance indicators</p>
+            <!-- Portfolio Tab -->
+            <div id="portfolio-tab" class="tab-content">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--dark-blue);">My
+                    Investment Portfolio</h2>
+                <p style="color: #64748b; margin-bottom: 25px;">View and manage your current investments.</p>
 
-                <table class="finance-table">
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Value</th>
-                            <th>Change</th>
-                            <th>% Change</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>S&P 500</td>
-                            <td>4,432.65</td>
-                            <td class="trend-up">+28.73</td>
-                            <td class="trend-up">+0.65%</td>
-                        </tr>
-                        <tr>
-                            <td>Dow Jones</td>
-                            <td>34,500.21</td>
-                            <td class="trend-up">+112.45</td>
-                            <td class="trend-up">+0.33%</td>
-                        </tr>
-                        <tr>
-                            <td>NASDAQ</td>
-                            <td>13,765.84</td>
-                            <td class="trend-up">+86.32</td>
-                            <td class="trend-up">+0.63%</td>
-                        </tr>
-                        <tr>
-                            <td>Russell 2000</td>
-                            <td>1,865.43</td>
-                            <td class="trend-down">-5.67</td>
-                            <td class="trend-down">-0.30%</td>
-                        </tr>
-                        <tr>
-                            <td>10-Yr Treasury</td>
-                            <td>4.25%</td>
-                            <td class="trend-up">+0.03</td>
-                            <td class="trend-up">+0.71%</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="info-card">
-                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">Market Analysis</h3>
-                    <p style="color: #64748b;">Equity markets showed moderate gains today amid positive earnings reports
-                        from the technology sector. The S&P 500 reached a new high for the year, while small caps faced
-                        slight pressure.</p>
-                </div>
-            </div>
-
-            <!-- Interest Rates Tab -->
-            <div id="rates-tab" class="tab-content">
-                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--dark-blue);">Current
-                    Interest Rates</h2>
-                <p style="color: #64748b; margin-bottom: 25px;">Latest rates for banking products (as of today)</p>
-
-                <table class="finance-table">
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Rate</th>
-                            <th>APY</th>
-                            <th>Change</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>30-Yr Fixed Mortgage</td>
-                            <td>6.75%</td>
-                            <td>6.85%</td>
-                            <td class="trend-down">-0.10%</td>
-                        </tr>
-                        <tr>
-                            <td>15-Yr Fixed Mortgage</td>
-                            <td>6.25%</td>
-                            <td>6.35%</td>
-                            <td class="trend-down">-0.05%</td>
-                        </tr>
-                        <tr>
-                            <td>5/1 ARM</td>
-                            <td>5.99%</td>
-                            <td>6.10%</td>
-                            <td class="trend-up">+0.05%</td>
-                        </tr>
-                        <tr>
-                            <td>Savings Account</td>
-                            <td>4.25%</td>
-                            <td>4.35%</td>
-                            <td class="trend-up">+0.10%</td>
-                        </tr>
-                        <tr>
-                            <td>1-Yr CD</td>
-                            <td>5.00%</td>
-                            <td>5.12%</td>
-                            <td class="trend-up">+0.15%</td>
-                        </tr>
-                        <tr>
-                            <td>5-Yr CD</td>
-                            <td>4.50%</td>
-                            <td>4.60%</td>
-                            <td class="trend-up">+0.10%</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="info-card">
-                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">Rate Outlook</h3>
-                    <p style="color: #64748b;">The Federal Reserve's recent pause in rate hikes has provided some
-                        stability to mortgage rates. Savings rates continue to offer attractive returns for depositors.
+                <div class="account-card">
+                    <span class="offer-tag">Current Value</span>
+                    <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 10px;">$68,425.18</h3>
+                    <p style="color: #64748b; margin-bottom: 15px;">Total account value</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 72%;"></div>
+                    </div>
+                    <p style="color: #64748b; font-size: 14px; text-align: center; margin-top: 10px;">+8.2% year-to-date
                     </p>
                 </div>
-            </div>
 
-            <!-- Financial News Tab -->
-            <div id="news-tab" class="tab-content">
-                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--dark-blue);">Latest
-                    Financial News</h2>
-                <p style="color: #64748b; margin-bottom: 25px;">Stay updated with the latest developments in the
-                    financial world</p>
+                <div style="background: #f8fafc; padding: 20px; border-radius: 12px; margin-top: 20px;">
+                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 15px;">Asset Allocation</h3>
 
-                <div class="news-card">
-                    <div class="news-date">
-                        <div class="news-day">12</div>
-                        <div class="news-month">Oct</div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <span style="font-weight: 600;">Stocks</span>
+                        <span>65%</span>
                     </div>
-                    <div class="news-content">
-                        <h3>Fed Indicates Potential Rate Cuts in 2024</h3>
-                        <p>Federal Reserve officials suggest that inflation is cooling faster than expected, potentially
-                            paving the way for rate cuts next year.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%; background: var(--primary-blue);"></div>
                     </div>
-                </div>
 
-                <div class="news-card">
-                    <div class="news-date">
-                        <div class="news-day">11</div>
-                        <div class="news-month">Oct</div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px; margin-top: 15px;">
+                        <span style="font-weight: 600;">Bonds</span>
+                        <span>25%</span>
                     </div>
-                    <div class="news-content">
-                        <h3>Tech Stocks Rally on AI Optimism</h3>
-                        <p>Major technology companies saw significant gains as investors bet on artificial intelligence
-                            driving future growth.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 25%; background: var(--accent-gold);"></div>
                     </div>
-                </div>
 
-                <div class="news-card">
-                    <div class="news-date">
-                        <div class="news-day">10</div>
-                        <div class="news-month">Oct</div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px; margin-top: 15px;">
+                        <span style="font-weight: 600;">Cash</span>
+                        <span>10%</span>
                     </div>
-                    <div class="news-content">
-                        <h3>Consumer Spending Exceeds Expectations</h3>
-                        <p>Retail sales data shows consumers continue to spend despite economic uncertainties,
-                            supporting economic growth.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 10%; background: #64748b;"></div>
                     </div>
-                </div>
-
-                <div class="news-card">
-                    <div class="news-date">
-                        <div class="news-day">09</div>
-                        <div class="news-month">Oct</div>
-                    </div>
-                    <div class="news-content">
-                        <h3>Housing Market Shows Signs of Stabilization</h3>
-                        <p>After months of decline, home prices are beginning to stabilize as mortgage rates moderate.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Financial Tips Tab -->
-            <div id="tips-tab" class="tab-content">
-                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--dark-blue);">Financial
-                    Planning Tips</h2>
-                <p style="color: #64748b; margin-bottom: 25px;">Expert advice to improve your financial health</p>
-
-                <div class="info-card">
-                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">1. Build an Emergency Fund</h3>
-                    <p style="color: #64748b;">Aim to save 3-6 months' worth of living expenses in a easily accessible
-                        account to cover unexpected financial challenges.</p>
-                </div>
-
-                <div class="info-card">
-                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">2. Pay Down High-Interest Debt
-                    </h3>
-                    <p style="color: #64748b;">Focus on eliminating credit card debt and other high-interest loans
-                        before investing extra money.</p>
-                </div>
-
-                <div class="info-card">
-                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">3. Diversify Your Investments
-                    </h3>
-                    <p style="color: #64748b;">Spread your investments across different asset classes to reduce risk and
-                        improve potential returns.</p>
-                </div>
-
-                <div class="info-card">
-                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">4. Maximize Retirement
-                        Contributions</h3>
-                    <p style="color: #64748b;">Take full advantage of employer-matched retirement plans and
-                        tax-advantaged accounts like IRAs and 401(k)s.</p>
-                </div>
-
-                <div class="info-card">
-                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">5. Review Your Insurance
-                        Coverage</h3>
-                    <p style="color: #64748b;">Regularly assess your insurance needs to ensure you're adequately
-                        protected against life's uncertainties.</p>
                 </div>
             </div>
         </div>
@@ -788,116 +776,128 @@
         <div class="content-section">
             <h2
                 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px; color: var(--dark-blue);">
-                Financial Tools & Resources</h2>
+                Why Invest With SecureBank?</h2>
 
             <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--primary-blue);">
                 <div class="icon-circle" style="background: #dbeafe;">
-                    <i class="fas fa-calculator" style="color: var(--primary-blue);"></i>
+                    <i class="fas fa-chart-line" style="color: var(--primary-blue);"></i>
                 </div>
-                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Financial
-                    Calculators</h3>
-                <p style="color: #64748b; text-align: center;">Plan your financial future with our suite of interactive
-                    calculators for loans, savings, and investments.</p>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Proven
+                    Performance</h3>
+                <p style="color: #64748b; text-align: center;">Our funds have consistently outperformed market
+                    benchmarks over the past decade.</p>
             </div>
 
             <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--accent-gold);">
                 <div class="icon-circle" style="background: #fef3c7;">
-                    <i class="fas fa-book-open" style="color: var(--accent-gold);"></i>
+                    <i class="fas fa-coins" style="color: var(--accent-gold);"></i>
                 </div>
-                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Learning Center
-                </h3>
-                <p style="color: #64748b; text-align: center;">Access our comprehensive library of articles, guides, and
-                    tutorials on personal finance topics.</p>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Low Fees</h3>
+                <p style="color: #64748b; text-align: center;">We offer some of the lowest management fees in the
+                    industry, saving you money.</p>
             </div>
 
             <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--primary-blue);">
                 <div class="icon-circle" style="background: #dbeafe;">
-                    <i class="fas fa-chart-pie" style="color: var(--primary-blue);"></i>
+                    <i class="fas fa-user-shield" style="color: var(--primary-blue);"></i>
                 </div>
-                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Market Analysis
-                </h3>
-                <p style="color: #64748b; text-align: center;">Get expert insights and analysis on market trends,
-                    economic indicators, and investment opportunities.</p>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Expert
+                    Management</h3>
+                <p style="color: #64748b; text-align: center;">Our team of experienced fund managers actively monitor
+                    and adjust your investments.</p>
             </div>
 
             <div class="card" style="background: white; padding: 20px; border-top: 4px solid var(--accent-gold);">
                 <div class="icon-circle" style="background: #fef3c7;">
-                    <i class="fas fa-user-tie" style="color: var(--accent-gold);"></i>
+                    <i class="fas fa-balance-scale" style="color: var(--accent-gold);"></i>
                 </div>
-                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Advisor
-                    Connection</h3>
-                <p style="color: #64748b; text-align: center;">Connect with our financial advisors for personalized
-                    guidance tailored to your financial goals.</p>
+                <h3 style="font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 10px;">Diversification
+                </h3>
+                <p style="color: #64748b; text-align: center;">Spread your risk across various asset classes and
+                    geographic regions.</p>
             </div>
         </div>
 
 
 
-        <!-- Economic Indicators Section -->
+        <!-- Stats Section -->
         <div class="content-section"
             style="background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue)); color: white;">
-            <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px;">Key Economic
-                Indicators</h2>
+            <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px;">Investment
+                Performance</h2>
 
             <div class="stats-container">
                 <div class="stat-box">
-                    <p style="font-size: 32px; font-weight: 700;">3.7%</p>
-                    <p style="font-size: 16px;">Unemployment Rate</p>
+                    <p style="font-size: 32px; font-weight: 700;">9.8%</p>
+                    <p style="font-size: 16px;">Avg. Annual Return</p>
                 </div>
 
                 <div class="stat-box">
-                    <p style="font-size: 32px; font-weight: 700;">3.2%</p>
-                    <p style="font-size: 16px;">Inflation (CPI)</p>
+                    <p style="font-size: 32px; font-weight: 700;">$4.2B</p>
+                    <p style="font-size: 16px;">Assets Under Mgmt.</p>
                 </div>
 
                 <div class="stat-box">
-                    <p style="font-size: 32px; font-weight: 700;">2.1%</p>
-                    <p style="font-size: 16px;">GDP Growth</p>
+                    <p style="font-size: 32px; font-weight: 700;">15+</p>
+                    <p style="font-size: 16px;">Investment Funds</p>
                 </div>
 
                 <div class="stat-box">
-                    <p style="font-size: 32px; font-weight: 700;">5.5%</p>
-                    <p style="font-size: 16px;">Fed Funds Rate</p>
+                    <p style="font-size: 32px; font-weight: 700;">25+</p>
+                    <p style="font-size: 16px;">Years Experience</p>
                 </div>
             </div>
         </div>
 
-        <!-- Financial Planning Section -->
+        <!-- Special Offers -->
         <div class="content-section">
             <h2
                 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 25px; color: var(--dark-blue);">
-                Financial Planning Guide</h2>
+                Special Investment Offers</h2>
 
             <div
                 style="background: linear-gradient(to right, #1a4f8c, #2c6cb0); color: white; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
-                <span class="offer-tag" style="background: white; color: var(--primary-blue);">Free Resource</span>
-                <h3 style="font-size: 20px; font-weight: 600; margin: 10px 0;">Retirement Planning Worksheet</h3>
-                <p style="margin-bottom: 15px;">Download our free worksheet to calculate your retirement needs and
-                    create a personalized savings plan.</p>
-                <a href="#" style="color: white; text-decoration: underline; font-weight: 600;">Download Now</a>
+                <span class="offer-tag" style="background: white; color: var(--primary-blue);">Limited Time</span>
+                <h3 style="font-size: 20px; font-weight: 600; margin: 10px 0;">Zero Commission Investing</h3>
+                <p style="margin-bottom: 15px;">No transaction fees on all ETF purchases until December 2023</p>
+                <a href="#" style="color: white; text-decoration: underline; font-weight: 600;">Learn More</a>
             </div>
 
             <div
                 style="background: linear-gradient(to right, #d4af37, #e6c65c); color: white; padding: 20px; border-radius: 12px;">
-                <span class="offer-tag" style="background: white; color: var(--accent-gold);">New</span>
-                <h3 style="font-size: 20px; font-weight: 600; margin: 10px 0;">College Savings Calculator</h3>
-                <p style="margin-bottom: 15px;">Plan for education expenses with our interactive calculator that
-                    projects future costs and savings needs.</p>
-                <a href="#" style="color: white; text-decoration: underline; font-weight: 600;">Try Calculator</a>
+                <span class="offer-tag" style="background: white; color: var(--accent-gold);">Exclusive</span>
+                <h3 style="font-size: 20px; font-weight: 600; margin: 10px 0;">Free Portfolio Review</h3>
+                <p style="margin-bottom: 15px;">Schedule a complimentary consultation with our investment advisors</p>
+                <a href="#" style="color: white; text-decoration: underline; font-weight: 600;">Schedule Now</a>
             </div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
             <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--accent-gold);">SecureBank
-                Financial Center</h3>
-            <p style="color: #cbd5e1; margin-bottom: 25px; font-size: 15px;">Your trusted source for financial
-                information and insights.</p>
+                Funds</h3>
+            <p style="color: #cbd5e1; margin-bottom: 25px; font-size: 15px;">Smart investing for your future.</p>
 
+            <div style="margin-bottom: 25px;">
+                <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: white;">Contact Our Advisors
+                </h4>
+                <p style="color: #cbd5e1; margin-bottom: 8px; font-size: 14px;"><i class="fas fa-map-marker-alt"
+                        style="margin-right: 10px; color: var(--accent-gold);"></i> 456 Investment Ave, Finance District
+                </p>
+                <p style="color: #cbd5e1; margin-bottom: 8px; font-size: 14px;"><i class="fas fa-phone"
+                        style="margin-right: 10px; color: var(--accent-gold);"></i> (800) 555-INVEST</p>
+                <p style="color: #cbd5e1; font-size: 14px;"><i class="fas fa-envelope"
+                        style="margin-right: 10px; color: var(--accent-gold);"></i> funds@securebank.com</p>
+            </div>
 
+            <div style="margin: 20px 0;">
+                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 14px;">Privacy Policy</a>
+                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 14px;">Disclosures</a>
+                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 14px;">Performance Data</a>
+            </div>
 
             <p style="color: #94a3b8; font-size: 14px; border-top: 1px solid #334155; padding-top: 20px;">&copy; 2023
-                SecureBank Financial Information Services. All rights reserved.</p>
+                SecureBank Investment Services. All investments involve risk, including possible loss of principal.</p>
         </div>
     </div>
 
@@ -921,10 +921,59 @@
             event.currentTarget.classList.add('active');
         }
 
-        // Initialize with market data tab active
+        // Investment calculator functionality
+        function calculateInvestment() {
+            const principal = parseFloat(document.getElementById('investment-amount').value);
+            const monthlyContribution = parseFloat(document.getElementById('monthly-contribution').value);
+            const annualRate = parseFloat(document.getElementById('interest-rate').value) / 100;
+            const years = parseFloat(document.getElementById('investment-years').value);
+
+            // Calculate future value
+            const monthlyRate = annualRate / 12;
+            const months = years * 12;
+
+            // Future value of initial investment
+            const futureValueInitial = principal * Math.pow(1 + annualRate, years);
+
+            // Future value of monthly contributions
+            const futureValueContributions = monthlyContribution * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
+
+            // Total future value
+            const futureValue = futureValueInitial + futureValueContributions;
+
+            // Total contributions
+            const totalContributions = principal + (monthlyContribution * months);
+
+            // Interest earned
+            const interestEarned = futureValue - totalContributions;
+
+            // Update results
+            document.getElementById('result-value').textContent = '$' + futureValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            document.getElementById('total-contributions').textContent = '$' + totalContributions.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            document.getElementById('interest-earned').textContent = '$' + interestEarned.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        // Initialize sliders to sync with number inputs
         document.addEventListener('DOMContentLoaded', function () {
-            // Set first tab as active by default
-            switchTab('market');
+            // Set up slider synchronization
+            const sliders = document.querySelectorAll('.slider');
+            sliders.forEach(slider => {
+                const inputId = slider.id.replace('-slider', '');
+                const numberInput = document.getElementById(inputId);
+
+                // Sync slider with number input
+                slider.addEventListener('input', function () {
+                    numberInput.value = this.value;
+                });
+
+                // Sync number input with slider
+                numberInput.addEventListener('input', function () {
+                    slider.value = this.value;
+                });
+            });
+
+            // Calculate initial investment projection
+            calculateInvestment();
         });
     </script>
 
@@ -1023,7 +1072,6 @@
     </script>
 
 
-
 </body>
 
-</html
+</html>
